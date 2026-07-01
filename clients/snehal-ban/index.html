@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snehal Ban — Personal Brand Manifesto</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#0a0c0b;
+  --bg-hero-1:#0a0d0c;
+  --bg-hero-2:#0d1310;
+  --surface:#121613;
+  --surface-raised:#171d19;
+  --border:rgba(255,255,255,0.08);
+  --border-strong:rgba(255,255,255,0.14);
+  --accent:#35d48c;
+  --accent-soft:rgba(53,212,140,0.5);
+  --accent-dim:rgba(53,212,140,0.1);
+  --accent-dim-2:rgba(53,212,140,0.18);
+  --text:#f1f4f2;
+  --text-muted:#9aa39d;
+  --text-faint:#5f6864;
+  --warn:#e2664f;
+  --warn-dim:rgba(226,102,79,0.1);
+  --warn-dim-2:rgba(226,102,79,0.18);
+  --display:'Poppins','Montserrat',sans-serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --radius:14px;
+  --radius-sm:9px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  width:100%;
+}
+::selection{background:var(--accent-dim-2);color:var(--text);}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;scroll-behavior:auto !important;}}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(53,212,140,0.10), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 0%, rgba(53,212,140,0.06), transparent 55%),
+    linear-gradient(180deg,var(--bg-hero-1),var(--bg-hero-2));
+  border-bottom:1px solid var(--border);
+  padding:2.4rem 3rem 3.2rem;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(ellipse 900px 500px at 20% 0%, black, transparent 70%);
+  pointer-events:none;
+}
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:1;
+  margin-bottom:2.6rem;
+}
+.brandmark{
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  font-size:12.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  font-weight:600;
+}
+.brandmark .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent-soft);}
+.hero-tags{display:flex;gap:.5rem;}
+.pill{
+  border:1px solid var(--border-strong);
+  padding:.3rem .7rem;
+  border-radius:100px;
+  font-size:11px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  font-weight:600;
+  white-space:nowrap;
+}
+.pill.accent{border-color:var(--accent-soft);color:var(--accent);background:var(--accent-dim);}
+
+.hero-body{position:relative;z-index:1;max-width:760px;}
+.hero-eyebrow{
+  font-family:var(--display);
+  font-weight:600;
+  color:var(--accent);
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-bottom:.9rem;
+}
+.hero-title{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(2.2rem,5vw,3.6rem);
+  line-height:1.05;
+  letter-spacing:-.01em;
+  margin-bottom:.85rem;
+}
+.hero-sub{
+  font-size:clamp(1.05rem,2vw,1.3rem);
+  color:var(--text-muted);
+  max-width:600px;
+  margin-bottom:1.6rem;
+}
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem .9rem;
+  font-size:13px;
+  color:var(--text-muted);
+  align-items:center;
+}
+.hero-meta span:not(:last-child)::after{content:'·';margin-left:.9rem;color:var(--text-faint);}
+
+.stat-row{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin-top:2.4rem;
+}
+.stat-cell{
+  background:rgba(10,13,12,0.6);
+  padding:1.1rem 1.3rem;
+}
+.stat-num{
+  font-family:var(--display);
+  font-size:1.7rem;
+  font-weight:600;
+  color:var(--accent);
+  line-height:1;
+  margin-bottom:.4rem;
+}
+.stat-label{font-size:12px;color:var(--text-muted);letter-spacing:.02em;}
+
+/* ---------- SHELL ---------- */
+.shell{display:flex;align-items:flex-start;}
+.sidebar{
+  width:272px;
+  flex-shrink:0;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  border-right:1px solid var(--border);
+  padding:1.6rem 1rem;
+  background:var(--bg);
+}
+.sidebar-label{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  padding:0 .8rem;
+  margin-bottom:.7rem;
+  font-weight:600;
+}
+.nav-item{
+  display:flex;
+  align-items:baseline;
+  gap:.7rem;
+  width:100%;
+  text-align:left;
+  background:none;
+  border:none;
+  color:var(--text-muted);
+  font-family:var(--sans);
+  font-size:13.5px;
+  font-weight:500;
+  padding:.68rem .8rem;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  border-left:2px solid transparent;
+  margin-bottom:.1rem;
+}
+.nav-item .num{
+  font-family:var(--display);
+  font-weight:600;
+  color:var(--text-faint);
+  font-size:13px;
+  min-width:20px;
+}
+.nav-item:hover{background:var(--surface);color:var(--text);}
+.nav-item.active{background:var(--accent-dim);color:var(--text);border-left-color:var(--accent);}
+.nav-item.active .num{color:var(--accent);}
+
+.main{flex:1;min-width:0;padding:2.2rem 3rem 6rem;max-width:1500px;}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding-bottom:1.4rem;
+  margin-bottom:2.2rem;
+  border-bottom:1px solid var(--border);
+}
+.crumb{font-size:12.5px;color:var(--text-faint);letter-spacing:.03em;}
+.crumb b{color:var(--text-muted);}
+.hamburger-btn{
+  display:none;
+  align-items:center;justify-content:center;
+  width:40px;height:40px;flex-shrink:0;
+  background:var(--surface);border:1px solid var(--border-strong);border-radius:9px;
+  color:var(--text);cursor:pointer;
+}
+.hamburger-btn .bars{display:block;width:16px;height:2px;background:var(--text);position:relative;}
+.hamburger-btn .bars::before,.hamburger-btn .bars::after{content:'';position:absolute;left:0;width:16px;height:2px;background:var(--text);}
+.hamburger-btn .bars::before{top:-5px;}
+.hamburger-btn .bars::after{top:5px;}
+
+.mobile-nav-panel{
+  display:none;
+  position:fixed;inset:0;z-index:60;
+  background:rgba(8,10,9,0.98);
+  padding:1.4rem 1.2rem 2rem;
+  overflow-y:auto;
+  flex-direction:column;
+}
+.mobile-nav-panel.open{display:flex;}
+.mobile-panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;}
+.mobile-panel-head h3{font-family:var(--display);font-weight:600;font-size:1.05rem;}
+.panel-close-btn{
+  width:38px;height:38px;border-radius:9px;background:var(--surface);border:1px solid var(--border-strong);
+  color:var(--text);font-size:17px;cursor:pointer;flex-shrink:0;
+}
+.mobile-nav-panel .nav-item{font-size:14.5px;padding:.85rem .9rem;min-height:46px;}
+
+.chapter{display:none;}
+.chapter.active{display:block;animation:fade .35s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+.ch-head{margin-bottom:2.2rem;max-width:800px;}
+.ch-num{
+  font-family:var(--display);
+  font-weight:600;
+  color:var(--accent);
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:.5rem;
+  display:block;
+}
+.ch-title{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(1.6rem,3vw,2.1rem);
+  letter-spacing:-.01em;
+  margin-bottom:.7rem;
+}
+.ch-why{
+  font-family:var(--sans);
+  font-weight:500;
+  color:var(--text-muted);
+  font-size:14.5px;
+  line-height:1.6;
+  border-left:2px solid var(--border-strong);
+  padding-left:1rem;
+}
+
+h3.sec-title{
+  font-size:11.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin:2.6rem 0 1rem;
+}
+h3.sec-title:first-of-type{margin-top:0;}
+h4.sub-title{font-family:var(--display);font-weight:600;font-size:1.15rem;margin-bottom:.6rem;}
+p.lead{color:var(--text-muted);margin-bottom:1.1rem;max-width:720px;}
+
+/* ---------- CARDS / GRIDS ---------- */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.4rem 1.5rem;
+}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+@media(max-width:1000px){.grid-3{grid-template-columns:1fr;}.grid-2{grid-template-columns:1fr;}}
+
+/* belief cards */
+.belief-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem 1.6rem;
+  margin-bottom:1rem;
+  position:relative;
+}
+.belief-top{display:flex;align-items:center;gap:.9rem;margin-bottom:.8rem;}
+.seal{
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;color:var(--accent);font-size:13px;
+  flex-shrink:0;
+}
+.belief-name{font-family:var(--display);font-weight:600;font-size:1.08rem;}
+blockquote.stamped{
+  position:relative;
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:1.02rem;
+  line-height:1.55;
+  color:var(--text);
+  padding-left:1.4rem;
+  border-left:2px solid var(--accent);
+  margin:.9rem 0;
+}
+p.explain{color:var(--text-muted);font-size:14px;}
+
+/* tag flags */
+.flag{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:12px;color:var(--warn);background:var(--warn-dim);
+  border:1px solid var(--warn-dim-2);
+  padding:.35rem .7rem;border-radius:8px;margin-top:.7rem;
+}
+.flag::before{content:'⚑';font-size:11px;}
+.flag.info{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-dim-2);}
+.flag.info::before{content:'ⓘ';}
+
+/* limits box */
+.limits-box{
+  border:1px solid var(--warn-dim-2);
+  background:var(--warn-dim);
+  border-radius:var(--radius);
+  padding:1.3rem 1.5rem;
+}
+.limits-box h4{color:var(--warn);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.8rem;}
+.limits-box ul{list-style:none;color:var(--text-muted);font-size:14px;}
+.limits-box li{padding:.35rem 0 .35rem 1.1rem;position:relative;}
+.limits-box li::before{content:'—';position:absolute;left:0;color:var(--warn);}
+
+/* objective / persona cards */
+.obj-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.3rem 1.4rem;
+}
+.obj-tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.5rem;}
+.obj-target{font-size:12.5px;color:var(--text-faint);margin-bottom:.6rem;}
+.obj-target b{color:var(--text-muted);}
+.obj-card p{color:var(--text-muted);font-size:13.8px;}
+
+.persona-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.4rem 1.5rem;
+}
+.persona-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.9rem;}
+.persona-name{font-family:var(--display);font-weight:600;font-size:1.2rem;}
+.persona-age{font-size:12px;color:var(--text-faint);}
+.persona-row{margin-bottom:.85rem;}
+.persona-row .k{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint);margin-bottom:.25rem;}
+.persona-row .v{font-size:13.5px;color:var(--text-muted);line-height:1.55;}
+.persona-row .v.emph{color:var(--accent);font-weight:600;}
+
+/* tables */
+.table-wrap{overflow-x:auto;max-width:100%;border:1px solid var(--border);border-radius:var(--radius);-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;font-size:13.3px;}
+thead th{
+  text-align:left;background:var(--surface-raised);
+  color:var(--accent);font-size:10.8px;letter-spacing:.08em;text-transform:uppercase;
+  padding:.75rem .9rem;border-bottom:1px solid var(--border);white-space:nowrap;
+}
+tbody td{padding:.8rem .9rem;border-bottom:1px solid var(--border);color:var(--text-muted);vertical-align:top;}
+tbody tr:last-child td{border-bottom:none;}
+tbody td.strong{color:var(--text);font-weight:600;}
+tbody tr:hover td{background:rgba(255,255,255,0.015);}
+
+/* wrong/right */
+.voice-rule{margin-bottom:1.6rem;padding-bottom:1.6rem;border-bottom:1px solid var(--border);}
+.voice-rule:last-child{border-bottom:none;}
+.vr-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.4rem;}
+.vr-num{font-family:var(--display);font-weight:700;color:var(--accent);font-size:13px;}
+.vr-desc{color:var(--text-muted);font-size:13.5px;margin-bottom:.4rem;}
+.vr-applies{color:var(--text-faint);font-size:12px;margin-bottom:.9rem;}
+.wrong-right{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:800px){.wrong-right{grid-template-columns:1fr;}}
+.wr{border-radius:var(--radius-sm);padding:.9rem 1rem;font-size:13.3px;line-height:1.55;}
+.wr.wrong{background:var(--warn-dim);border:1px solid var(--warn-dim-2);color:#d9b3ac;}
+.wr.right{background:var(--accent-dim);border:1px solid var(--accent-dim-2);color:#c9ead9;}
+.wr-label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:.4rem;}
+.wr.wrong .wr-label{color:var(--warn);}
+.wr.right .wr-label{color:var(--accent);}
+
+/* pill lists */
+.pill-list{display:flex;flex-wrap:wrap;gap:.5rem;}
+.pill-item{
+  font-size:12.6px;padding:.5rem .8rem;border-radius:9px;line-height:1.4;max-width:100%;
+}
+.pill-item.no{background:var(--warn-dim);border:1px solid var(--warn-dim-2);color:#d9b3ac;}
+.pill-item.yes{background:var(--accent-dim);border:1px solid var(--accent-dim-2);color:#c9ead9;}
+
+/* checklist */
+.checklist{list-style:none;}
+.checklist li{
+  display:flex;gap:.7rem;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:13.6px;color:var(--text-muted);
+}
+.checklist li:last-child{border-bottom:none;}
+.check-mark{
+  flex-shrink:0;width:18px;height:18px;border-radius:5px;border:1px solid var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:11px;margin-top:.1rem;
+}
+
+/* stepper */
+.stepper{display:flex;flex-direction:column;gap:0;}
+.step{display:flex;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);}
+.step:last-child{border-bottom:none;}
+.step-num{
+  font-family:var(--display);font-weight:700;color:var(--accent);font-size:1.05rem;
+  min-width:28px;
+}
+.step-body h4{font-size:14.5px;margin-bottom:.25rem;}
+.step-body p{color:var(--text-muted);font-size:13.3px;}
+.step-time{color:var(--text-faint);font-size:11.5px;margin-left:auto;white-space:nowrap;padding-left:1rem;}
+
+/* pass cards */
+.pass-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem 1.4rem;}
+.pass-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem;}
+.pass-tag{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-dim-2);padding:.25rem .55rem;border-radius:6px;}
+.pass-card h4{font-family:var(--display);font-weight:600;font-size:1.05rem;}
+.pass-focus{color:var(--text-muted);font-size:13px;margin-bottom:.9rem;}
+
+/* quote statement */
+.statement{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.5;color:var(--text);
+  padding:1.8rem 0;position:relative;
+}
+.statement::before{content:'“';color:var(--accent);font-size:2.2rem;font-style:normal;position:absolute;left:-1.6rem;top:1.1rem;opacity:.7;}
+
+.note{color:var(--text-faint);font-size:12.5px;font-style:italic;margin-top:.6rem;}
+.badge-pct{
+  display:inline-block;min-width:44px;text-align:center;font-weight:700;color:var(--accent);
+  background:var(--accent-dim);border:1px solid var(--accent-dim-2);border-radius:7px;padding:.2rem .5rem;font-size:12.5px;
+}
+
+section.block{margin-bottom:2.6rem;}
+section.block:last-child{margin-bottom:0;}
+
+footer.doc-footer{
+  border-top:1px solid var(--border);
+  padding:2rem 3rem;
+  display:flex;justify-content:space-between;align-items:center;
+  color:var(--text-faint);font-size:12px;flex-wrap:wrap;gap:.6rem;
+}
+
+/* ---------- TABLET ---------- */
+@media(max-width:1180px){
+  .sidebar{width:230px;}
+  .main{padding:2rem 2rem 5rem;}
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:880px){
+  .hero{padding:1.6rem 1.2rem 2rem;}
+  .hero-top{margin-bottom:1.6rem;}
+  .stat-row{grid-template-columns:repeat(2,1fr);}
+  .shell{flex-direction:column;}
+  .sidebar{display:none;}
+  .main{padding:1.4rem 1.1rem 4rem;max-width:100%;}
+  .topbar{
+    position:sticky;top:0;z-index:20;background:var(--bg);
+    margin:-1.4rem -1.1rem 1.6rem;padding:1rem 1.1rem;
+  }
+  .crumb:last-child{display:none;}
+  .hamburger-btn{display:flex;}
+  .step{flex-wrap:wrap;}
+  .step-time{margin-left:38px;padding-left:0;}
+  footer.doc-footer{padding:1.6rem 1.2rem;flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-top">
+    <div class="brandmark"><span class="dot"></span>RocketRush × Snehal Ban</div>
+    <div class="hero-tags">
+      <span class="pill">v1.0 · July 2026</span>
+      <span class="pill accent">Confidential</span>
+    </div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-eyebrow">Personal Brand Manifesto</div>
+    <h1 class="hero-title">Snehal Ban traces every flawed piece back to the exact place it broke down.</h1>
+    <p class="hero-sub">23+ years inside export-grade jewelry manufacturing, and the rare willingness to tell a CEO exactly what his product cannot yet be.</p>
+    <div class="hero-meta">
+      <span>Independent Quality Consultant, Lupin Co.</span>
+      <span>JDM, Jewelry Design &amp; Manufacturing</span>
+      <span>Mumbai</span>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat-cell"><div class="stat-num">23+</div><div class="stat-label">Years in jewelry manufacturing &amp; QA/QC</div></div>
+    <div class="stat-cell"><div class="stat-num">6</div><div class="stat-label">Core beliefs, transcript-grounded</div></div>
+    <div class="stat-cell"><div class="stat-num">3</div><div class="stat-label">Professional objectives</div></div>
+    <div class="stat-cell"><div class="stat-num">3</div><div class="stat-label">Audience personas mapped</div></div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-label">Manifesto Chapters</div>
+    <button class="nav-item active" data-target="ch01" data-label="Who Snehal Ban Is"><span class="num">01</span>Who She Is</button>
+    <button class="nav-item" data-target="ch02" data-label="The Audience Map"><span class="num">02</span>Audience Map</button>
+    <button class="nav-item" data-target="ch03" data-label="The Voice Bible"><span class="num">03</span>Voice Bible</button>
+    <button class="nav-item" data-target="ch04" data-label="Content Intelligence System"><span class="num">04</span>Content Intelligence</button>
+    <button class="nav-item" data-target="ch05" data-label="The 5 Post Types"><span class="num">05</span>Post Types</button>
+    <button class="nav-item" data-target="ch06" data-label="Post Anatomy"><span class="num">06</span>Post Anatomy</button>
+    <button class="nav-item" data-target="ch07" data-label="Draft-to-Publish Workflow"><span class="num">07</span>Draft-to-Publish</button>
+    <button class="nav-item" data-target="ch08" data-label="The Editing Protocol"><span class="num">08</span>Editing Protocol</button>
+    <button class="nav-item" data-target="ch09" data-label="Content Architecture"><span class="num">09</span>Content Architecture</button>
+    <button class="nav-item" data-target="ch10" data-label="Quality Control Gates"><span class="num">10</span>Quality Gates</button>
+  </nav>
+
+  <div class="mobile-nav-panel" id="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Chapter menu">
+    <div class="mobile-panel-head">
+      <h3>Manifesto Chapters</h3>
+      <button class="panel-close-btn" id="panel-close-btn" aria-label="Close menu">✕</button>
+    </div>
+    <button class="nav-item active" data-target="ch01" data-label="Who Snehal Ban Is"><span class="num">01</span>Who She Is</button>
+    <button class="nav-item" data-target="ch02" data-label="The Audience Map"><span class="num">02</span>Audience Map</button>
+    <button class="nav-item" data-target="ch03" data-label="The Voice Bible"><span class="num">03</span>Voice Bible</button>
+    <button class="nav-item" data-target="ch04" data-label="Content Intelligence System"><span class="num">04</span>Content Intelligence</button>
+    <button class="nav-item" data-target="ch05" data-label="The 5 Post Types"><span class="num">05</span>Post Types</button>
+    <button class="nav-item" data-target="ch06" data-label="Post Anatomy"><span class="num">06</span>Post Anatomy</button>
+    <button class="nav-item" data-target="ch07" data-label="Draft-to-Publish Workflow"><span class="num">07</span>Draft-to-Publish</button>
+    <button class="nav-item" data-target="ch08" data-label="The Editing Protocol"><span class="num">08</span>Editing Protocol</button>
+    <button class="nav-item" data-target="ch09" data-label="Content Architecture"><span class="num">09</span>Content Architecture</button>
+    <button class="nav-item" data-target="ch10" data-label="Quality Control Gates"><span class="num">10</span>Quality Gates</button>
+  </div>
+
+  <main class="main">
+    <div class="topbar">
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Open chapter menu" aria-controls="mobile-nav-panel" aria-expanded="false">
+        <span class="bars"></span>
+      </button>
+      <div class="crumb">Manifesto / <b id="chapter-label">Who Snehal Ban Is</b></div>
+      <div class="crumb">Prepared by RocketRush</div>
+    </div>
+
+    <!-- CHAPTER 01 -->
+    <section class="chapter active" id="ch01">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 01</span>
+        <h2 class="ch-title">Who Snehal Ban Is</h2>
+        <p class="ch-why">Every post decision — topic, tone, claim, angle — must be traceable back to who this person is. Content that skips this chapter is technically correct and personally wrong.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">1A · The Person</h3>
+        <p class="lead">She built a career on an eye most people don't have and can't be taught to fake — she can hold a finished piece, turn it once under the light, and know within seconds whether it will survive a client's rejection pile. She doesn't perform expertise. She states exactly what she knows and exactly what she doesn't, in the same breath, without apology. Every post must feel like she's marking a tray of pieces in front of you — direct, specific, unhedged.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Period</th><th>Role</th><th>Institution</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">~2000–2003</td><td>Student, Jewelry Design &amp; Manufacturing</td><td>JDM course — 6-semester program with a manufacturing internship</td></tr>
+              <tr><td class="strong">2003</td><td>Intern</td><td>Jasani Group (interviewed by Mr. Abhay Jasani)</td></tr>
+              <tr><td class="strong">Early career</td><td>Design &amp; production roles</td><td>Sparkle DM and other Mumbai manufacturing houses</td></tr>
+              <tr><td class="strong">~2007/08 onward</td><td>Full-time role, last employed position</td><td>SIA</td></tr>
+              <tr><td class="strong">~3 years, concurrent</td><td>Visiting faculty</td><td>SNDT-affiliated jewelry design institute, then IIGJ</td></tr>
+              <tr><td class="strong">Recent years–present</td><td>Independent Quality Consultant, founder</td><td>Lupin Co. (registered) — export houses, SEZ manufacturers, international brands</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="explain" style="margin-top:.9rem;">Personal: born and raised in Mumbai. Married to Varun Arora, a startup co-founder — her most consistent advocate and the person who pushed her toward building a public presence at all. Father is a self-made architect; mother an interior designer. Two younger sisters — one a well-known wedding planner, one in a senior role at a major global technology company in the US.</p>
+        <span class="flag">Verify exact name and dates of the JDM institute (heard on call as "Ascendity"/"SNDT" — unclear) and the correct spelling of Varun's company before publishing.</span>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">1B · The Value System</h3>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">01</span><span class="belief-name">Financial independence is where your voice comes from.</span></div>
+          <blockquote class="stamped">"If you are not dependent on someone for money, you'll have your voice in life. Otherwise you'll not have your words."</blockquote>
+          <p class="explain">A lesson from her father, repeated enough in childhood that it became structural. Explains why she's comfortable walking away from money — the independence was always the actual goal, the fee was secondary.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">02</span><span class="belief-name">State your limits before your expertise.</span></div>
+          <blockquote class="stamped">"This is my expertise, and this is not my expertise... I don't want to lie to you."</blockquote>
+          <p class="explain">She has never claimed to know CAD, casting chemistry, or process engineering. Posts that position her as an all-around manufacturing expert will feel false — her credibility comes specifically from admitting the edges of what she knows.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">03</span><span class="belief-name">Quality is an investment, not an expense.</span></div>
+          <blockquote class="stamped">"They don't realize it's an investment that you're doing for your company... they feel like it's an expense."</blockquote>
+          <p class="explain">Her central commercial argument, and the belief every CEO-facing post ultimately serves. She has lost clients over this exact misunderstanding and doesn't consider it her loss.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">04</span><span class="belief-name">Respect is the real currency — not the fee.</span></div>
+          <blockquote class="stamped">"I need respect. If you don't respect me while I'm working with you, I can't work with you."</blockquote>
+          <p class="explain">She has terminated a paying international agreement overnight over how she was treated, not over money. This is a hard boundary, not a negotiating tactic — content should never soften it into something more diplomatic than it is.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">05</span><span class="belief-name">Fix it where it actually broke — not where it's finally visible.</span></div>
+          <blockquote class="stamped">"If this attitude comes out from your entire system, you're sorted... casting will go, filing will go, right the first time."</blockquote>
+          <p class="explain">Her core professional insight: most companies fix problems at final QC, which is the most expensive and least effective place to catch them. She traces issues back through the department chain to where they actually started.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">06</span><span class="belief-name">One person, one line of communication.</span></div>
+          <blockquote class="stamped">"I don't want one person coming and telling me this, another person telling me that. One person. We work one to one."</blockquote>
+          <p class="explain">Her operating discipline with every client, regardless of company size. She is comfortable never speaking directly to the CEO again after the first meeting, as long as there's one accountable point of contact.</p>
+        </div>
+
+        <div class="limits-box" style="margin-top:1.5rem;">
+          <h4>Hard Limits — Never Publish</h4>
+          <ul>
+            <li>Any brand or client named in a negative, comparative, or disparaging light — under Indian law (BNS Sec. 356, formerly IPC 499), a false or damaging statement about an identifiable company's trade or business is actionable without needing to prove financial loss</li>
+            <li>Unpublished rejection-rate, defect-rate, or process data belonging to any named client — contractually confidential information under Indian NDA and trade-secret norms</li>
+            <li>Ankit, Anupam, Vipin, or Keval (or their companies) named or made identifiable in any post until each has explicitly confirmed permission</li>
+            <li>Specific manufacturing or process details tied to a named SEZ or export house</li>
+            <li>Family detail beyond what's already been openly discussed — no naming her sisters, their employers, or their clients</li>
+            <li>Any framing that reads as "Indian brands can't do quality" — she does not want to sound anti-Indian-brand; she holds every brand, regardless of origin, to the same standard</li>
+          </ul>
+        </div>
+        <span class="flag">Confirm with Snehal which past clients (BlueStone, Walking Tree/Aneka/Ansaid, Sun Gems, UniDesign) she's comfortable naming at all, even neutrally, before any post references them.</span>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">1C · Professional Objectives</h3>
+        <div class="grid-3">
+          <div class="obj-card">
+            <div class="obj-tag">Objective 01</div>
+            <h4 class="sub-title" style="font-size:1rem;">Reputation Among Founder-CEOs</h4>
+            <div class="obj-target"><b>Target —</b> CEOs and founders of new-age jewelry brands, India and Europe, particularly export-oriented or premium-positioned.</div>
+            <p>Content must demonstrate the specific, technical kind of seeing she does — never read as a sales pitch or a generic "quality matters" message. Authority through precision, not persuasion.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-tag">Objective 02</div>
+            <h4 class="sub-title" style="font-size:1rem;">A Durable Practice, Not Another Stint</h4>
+            <div class="obj-target"><b>Target —</b> the same CEO audience, held over a longer horizon.</div>
+            <p>She's explicit that consulting engagements "shut down" after two or three years. Content should build compounding recognition — a reputation that outlasts any single client relationship — not just prove value on a single project.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-tag">Objective 03</div>
+            <h4 class="sub-title" style="font-size:1rem;">Position Lupin Co. as Authority, Not Vendor</h4>
+            <div class="obj-target"><b>Target —</b> decision-makers who currently treat QC as commoditized inspection labor.</div>
+            <p>The recurring commercial argument (Belief 03) belongs here: reframing quality consulting from a line-item expense to a specialized, judgment-driven practice.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">1D · Unique Advantage</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:20%;">Dimension</th><th>What It Is</th><th>Why Hard to Replicate</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Export-Grade Focus</td><td>23+ years working almost exclusively against export and international quality standards, not the domestic market's looser bar.</td><td>Most quality professionals in India are calibrated to the domestic market. Her eye is calibrated to the standard that international buyers actually hold brands to.</td></tr>
+              <tr><td class="strong">Cross-Departmental Root-Cause Tracing</td><td>Doesn't stop at "this piece is flawed" — traces the defect back through casting, filing, polishing, and setting to find where the process actually broke.</td><td>Most QC catches the symptom at the final stage. Very few practitioners can name which department, and which handoff, actually caused it.</td></tr>
+              <tr><td class="strong">Direct Owner-to-Owner Relationships</td><td>Works CEO to CEO in the first meeting, then hands off to a single named point of contact — never a committee.</td><td>Builds trust fast with founders specifically, because she's evaluating the person as much as the pieces on the tray.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">1E · Zone of Genius</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:26%;">Topic</th><th>Why She Owns It</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Root-cause tracing across the production chain</td><td>Can identify not just that a piece is flawed, but which department — casting, filing, polishing, setting — actually let it through, and why.</td></tr>
+              <tr><td class="strong">Quality as investment, not expense</td><td>Lost real clients over this exact framing and can explain the economics of rework, export rejection, and brand damage in commercial terms a founder understands.</td></tr>
+              <tr><td class="strong">Distinguishing "acceptable" from "not acceptable" at export standard</td><td>23 years of calibrating her eye specifically against the bar international buyers hold brands to — not the more forgiving domestic bar.</td></tr>
+              <tr><td class="strong">Bridging the design–production gap</td><td>Has sat on both sides — brand side and production side — and can explain why a beautiful design on paper becomes an unmanufacturable promise on the floor.</td></tr>
+              <tr><td class="strong">What respect looks like in a vendor relationship</td><td>Has walked away from paying work over disrespect and can speak credibly to founders about what a healthy consultant relationship actually requires.</td></tr>
+              <tr><td class="strong">Training the eye — what 23 years of looking at pieces actually teaches</td><td>Can describe, in physical and sensory terms, what she's looking for and why it takes decades, not a course, to see it instantly.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="statement" style="margin-left:1.6rem;">Snehal Ban traces every flawed piece back to the exact place it broke down — and tells the CEO the truth even when the truth doesn't convert.</div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 02 -->
+    <section class="chapter" id="ch02">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 02</span>
+        <h2 class="ch-title">The Audience Map</h2>
+        <p class="ch-why">Every post is a decision about who you are writing for and what they need to feel. Content that skips this chapter is technically correct and emotionally inert.</p>
+      </div>
+      <span class="flag info">All audience language is inferred from the story call and Snehal's stated objective — no posts or comment data exists yet. Validate against the first month of comments.</span>
+
+      <section class="block" style="margin-top:1.8rem;">
+        <h3 class="sec-title">The Three Personas</h3>
+        <div class="grid-3">
+          <div class="persona-card">
+            <div class="persona-head"><span class="persona-name">Arjun</span><span class="persona-age">30–45</span></div>
+            <p class="explain" style="margin-bottom:.9rem;">Founder-CEO of a new-age, export-facing jewelry brand — India or Europe. Growing fast, confident in the design and brand story, privately unsure whether the product actually holds up structurally at scale.</p>
+            <div class="persona-row"><div class="k">Fear</div><div class="v">"My product looks great in the photos. I don't actually know if it survives a rejection pile at the client end — and I won't know until it's expensive to fix."</div></div>
+            <div class="persona-row"><div class="k">Stops scrolling for</div><div class="v">A story that names the exact, invisible mechanism behind rework and rejection — not another generic "quality matters" message.</div></div>
+            <div class="persona-row"><div class="k">Must feel</div><div class="v emph">Exposed, productively</div></div>
+          </div>
+          <div class="persona-card">
+            <div class="persona-head"><span class="persona-name">Keya</span><span class="persona-age">28–40</span></div>
+            <p class="explain" style="margin-bottom:.9rem;">Production or quality head — the single point of contact a founder appoints after the first meeting. Technically capable, often overruled when she flags an issue leadership doesn't want to hear.</p>
+            <div class="persona-row"><div class="k">Fear</div><div class="v">"I flag the problem. Nobody above me listens until the client rejects the batch — and then it's my name on the report."</div></div>
+            <div class="persona-row"><div class="k">Stops scrolling for</div><div class="v">Content that validates the discipline of saying no to a flawed piece, even under pressure to ship.</div></div>
+            <div class="persona-row"><div class="k">Must feel</div><div class="v emph">Backed up</div></div>
+          </div>
+          <div class="persona-card">
+            <div class="persona-head"><span class="persona-name">Elena</span><span class="persona-age">35–55</span></div>
+            <p class="explain" style="margin-bottom:.9rem;">European boutique or heritage brand owner sourcing from or considering Indian manufacturing partners. Cares about the craftsmanship story but needs proof, not marketing language.</p>
+            <div class="persona-row"><div class="k">Fear</div><div class="v">"Will a piece made in India actually meet the standard my brand has promised its customers for decades?"</div></div>
+            <div class="persona-row"><div class="k">Stops scrolling for</div><div class="v">Evidence of standards discipline — a specific, unglamorous story about a rejected piece — over any polished claim.</div></div>
+            <div class="persona-row"><div class="k">Must feel</div><div class="v emph">Reassured</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Voice of Customer (Provisional)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Frustration</th><th>Fear</th><th>Desire</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>"Every consultant tells me quality matters. None of them tell me where mine is actually breaking." <i>(Arjun)</i></td><td>"I'll scale the brand before I find the structural problem, and the rejections will scale with it." <i>(Arjun)</i></td><td>"I want someone who will show me exactly where it broke, not just that it broke." <i>(Arjun)</i></td></tr>
+              <tr><td>2</td><td>"I raise the same issue every month and it still ships." <i>(Keya)</i></td><td>"Eventually my name is the one attached to the batch that gets rejected." <i>(Keya)</i></td><td>"I want leadership to treat a flagged piece as a decision, not an inconvenience." <i>(Keya)</i></td></tr>
+              <tr><td>3</td><td>"Every Indian manufacturer says they can meet our standard. Almost none actually demonstrate how." <i>(Elena)</i></td><td>"I'll find out my supplier's real standard from a customer complaint, not from due diligence." <i>(Elena)</i></td><td>"I want to see how someone actually evaluates a piece, not just hear that they do." <i>(Elena)</i></td></tr>
+              <tr><td>4</td><td>"Quality consulting always gets cut first when budgets tighten." <i>(Arjun)</i></td><td>"I'm treating an investment as a line-item expense and I won't see the cost of that until it's too late." <i>(Arjun)</i></td><td>"I want the economics of quality explained to me the way I'd explain a financial decision to my board." <i>(Arjun)</i></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Emotion-to-Action</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Persona</th><th>Emotion to Resolve</th><th>Post Must Do</th><th>Post Must Not Do</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Arjun</td><td>Private uncertainty about whether the product actually holds up beyond the photo</td><td>Name the specific, invisible mechanism with enough precision that it feels earned, not generic</td><td>Sound like a pitch for her services</td></tr>
+              <tr><td class="strong">Keya</td><td>Isolation — flags issues that get overridden</td><td>Validate the discipline of holding the line on a flawed piece</td><td>Talk over her head to leadership only</td></tr>
+              <tr><td class="strong">Elena</td><td>Skepticism about sourcing claims she's heard before</td><td>Demonstrate the standard through a specific, textured story — not an assurance</td><td>Make any claim that reads as "Indian manufacturing can't be trusted"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 03 -->
+    <section class="chapter" id="ch03">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 03</span>
+        <h2 class="ch-title">The Voice Bible</h2>
+        <p class="ch-why">LinkedIn content fails most often not from bad ideas but from a voice the client cannot recognise as their own. These are structural rules derived from how she actually speaks, not aesthetic preferences.</p>
+      </div>
+      <span class="flag info">Track B — Provisional. Derived from spoken language, not written output. Validate all rules against the first five posts before treating as fixed.</span>
+
+      <section class="block" style="margin-top:1.8rem;">
+        <h3 class="sec-title">The 7 Voice Rules</h3>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">01</span><h4 class="sub-title" style="font-size:1rem;">Let the Object Tell the Story</h4></div>
+          <p class="vr-desc">She describes exactly what she saw, held, or touched before she names the lesson. The physical detail always arrives first.</p>
+          <p class="vr-applies">Applies to all post types.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>Quality control is about attention to detail.</div>
+            <div class="wr right"><span class="wr-label">Right</span>I picked up the ring. Turned it once under the light. There it was — a hairline scratch near the setting. The salesperson hadn't even seen it yet.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">02</span><h4 class="sub-title" style="font-size:1rem;">Name the Standard, Not the Brand</h4></div>
+          <p class="vr-desc">She distinguishes acceptable from not acceptable by naming the standard a piece is being held to — never by naming or shaming a specific company. This is a hard constraint, not a style choice.</p>
+          <p class="vr-applies">Applies every time a brand, client, or company would otherwise be identifiable.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>[Brand] doesn't understand quality — I've seen their pieces up close.</div>
+            <div class="wr right"><span class="wr-label">Right</span>There's a standard export brands hold every piece to. Most domestic pieces never get built against it — not because the metal is different, but because nobody asked the piece to meet it.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">03</span><h4 class="sub-title" style="font-size:1rem;">State Your Limits Before Your Expertise</h4></div>
+          <p class="vr-desc">She is explicit about what she does and doesn't know, in the same breath as the claim to expertise. This is structural to her credibility, not modesty.</p>
+          <p class="vr-applies">Applies to any post that could otherwise read as overclaiming.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>I can solve any quality problem you bring me.</div>
+            <div class="wr right"><span class="wr-label">Right</span>I can tell you if a piece is right. I can't tell you how to build the CAD file behind it. That's not my forte, and I've never pretended otherwise.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">04</span><h4 class="sub-title" style="font-size:1rem;">Trace the Break Backward</h4></div>
+          <p class="vr-desc">She doesn't just describe a defect — she walks it back through the department chain to where it actually started.</p>
+          <p class="vr-applies">Applies to any post about a specific quality issue or process failure.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>This piece had a quality issue that we caught in QC.</div>
+            <div class="wr right"><span class="wr-label">Right</span>The final polish looked fine. The problem wasn't there. It was three stations back, in casting, where nobody flagged it — and by the time it reached me, four departments had already spent money getting it wrong.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">05</span><h4 class="sub-title" style="font-size:1rem;">Let Respect Be the Real Currency</h4></div>
+          <p class="vr-desc">Money is discussed candidly, but respect — not the fee — is framed as the actual dealbreaker in any story about a client relationship.</p>
+          <p class="vr-applies">Applies to any post involving a client conflict or a decision to walk away.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>I raised my rates because I know my worth.</div>
+            <div class="wr right"><span class="wr-label">Right</span>I've walked away from a contract worth more than I'll say here — not over money. Over how I was spoken to in a meeting. That's the line, every time.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">06</span><h4 class="sub-title" style="font-size:1rem;">Talk Like You're Marking a Tray of Pieces in Front of Someone</h4></div>
+          <p class="vr-desc">Direct, sensory, present-tense. The reader should feel like they're standing at the table with her.</p>
+          <p class="vr-applies">Applies to all posts. Any post that sounds like a report has broken this rule.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>Quality assessment requires a systematic evaluation methodology.</div>
+            <div class="wr right"><span class="wr-label">Right</span>They lay the tray in front of you. You pick each piece up. This one's okay. This one's not. You don't soften it — that's the whole job.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">07</span><h4 class="sub-title" style="font-size:1rem;">Close on the Real Stakes, Not the Sale</h4></div>
+          <p class="vr-desc">The close names the actual commercial consequence — rework cost, client trust, brand damage — never a motivational wrap-up.</p>
+          <p class="vr-applies">Applies to every post without exception.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>Quality is everything — invest in it today.</div>
+            <div class="wr right"><span class="wr-label">Right</span>The client didn't reject the batch because of the metal. They rejected it because somewhere in the chain, someone decided "close enough" was good enough. It wasn't.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Voice Don'ts</h3>
+        <div class="pill-list">
+          <span class="pill-item no">Any brand named in a negative or comparative light</span>
+          <span class="pill-item no">"At the end of the day..." — filler bridge</span>
+          <span class="pill-item no">"QC methodology" / "process optimization framework" — jargon register</span>
+          <span class="pill-item no">"Leverage," "synergy," "value-add" — corporate speak</span>
+          <span class="pill-item no">"Here are 5 ways to improve your quality..." — listicle framing</span>
+          <span class="pill-item no">"Excited to announce..." — performed, not described</span>
+          <span class="pill-item no">Anything that reads like a pitch for her services</span>
+          <span class="pill-item no">"Indian brands don't understand quality" — reads as anti-Indian, not standards-driven</span>
+          <span class="pill-item no">Unverified rejection-rate numbers tied to a named or identifiable client</span>
+          <span class="pill-item no">"In today's competitive jewelry market..." — violates every rule at once</span>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Voice Dos</h3>
+        <div class="pill-list">
+          <span class="pill-item yes">Open with the physical piece in hand — what she saw, touched, turned over</span>
+          <span class="pill-item yes">Use precise numbers — "point six percent," "three stations back"</span>
+          <span class="pill-item yes">Name the standard, never the brand</span>
+          <span class="pill-item yes">State the edge of her own expertise before making a claim</span>
+          <span class="pill-item yes">Let the story carry the technical lesson, not the other way round</span>
+          <span class="pill-item yes">Keep the tone blunt but respectful — she marks the piece, not the person</span>
+          <span class="pill-item yes">Use one specific moment or piece per post, not a general trend</span>
+          <span class="pill-item yes">Close on the real commercial stakes — cost, rework, trust lost or earned</span>
+          <span class="pill-item yes">Let a Hinglish phrase or two surface naturally where it's true to how she'd actually say it</span>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Sentence Signature Table</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:20%;">Pattern</th><th>Example</th><th style="width:26%;">When to Use</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">The Blunt Verdict</td><td>"Okay. Not okay."</td><td>When marking a piece or a batch — no hedging, no softening</td></tr>
+              <tr><td class="strong">The Expertise Boundary</td><td>"That's not my forte, and I don't want to lie to you about it."</td><td>When declining to speak beyond her scope</td></tr>
+              <tr><td class="strong">The Standard Callout</td><td>"There's export quality. And there's everything else."</td><td>Distinguishing tiers of quality without naming a company</td></tr>
+              <tr><td class="strong">The Root-Cause Turn</td><td>"It didn't start there. It started three departments earlier."</td><td>Pivoting from the visible symptom to the actual cause</td></tr>
+              <tr><td class="strong">The Respect Line</td><td>"I need respect. If I don't have that, I can't work with you."</td><td>Closing a story about being disrespected or undervalued</td></tr>
+              <tr><td class="strong">The Investment Reframe</td><td>"It's not an expense. It's an investment — and the difference shows up later, not now."</td><td>Making the commercial case for quality to a founder</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 04 -->
+    <section class="chapter" id="ch04">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 04</span>
+        <h2 class="ch-title">The Content Intelligence System</h2>
+        <p class="ch-why">The failure mode of most content strategies is not quality — it is depletion. By month three, the writer is either recycling or manufacturing. This system prevents both.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">The Content Universe — Four Layers</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Layer</th><th>What Lives Here</th><th>Depletion</th><th>How to Extend</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Surface</td><td>JDM background and how she found jewelry, the wedding-ring-at-the-counter story, the self-sufficiency lesson from her father, Mr. Abhay Jasani's chivalry at her internship interview</td><td>Month 1–2</td><td>Do not repeat. Reference context only.</td></tr>
+              <tr><td class="strong">Middle</td><td>Root-cause tracing stories from export-house work (anonymised until named permission is granted), the export-quality ring disaster, the meeting where a boss backed her over a production manager, teaching stint anecdotes</td><td>Month 3–6</td><td>Second story call: specific rejected-piece stories, more department-handoff moments</td></tr>
+              <tr><td class="strong">Deep</td><td>23-year view on why domestic manufacturing culture lags the export standard, her private thesis on "investment vs. expense," what corporate India's "chalta hai" attitude actually costs</td><td>Month 6–18</td><td>Requires continued story calls — do not rush</td></tr>
+              <tr><td class="strong">Live</td><td>India–China–Thailand sourcing dynamics, new-age DTC jewelry brands scaling quality challenges, GJEPC/export policy shifts, quality-tech adoption in manufacturing</td><td>Continuous</td><td>Weekly signal monitoring</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Source 1 — Angle Expansion Matrix</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:22%;">Topic</th><th>Five Remaining Angles</th><th style="width:9%;">Priority</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Investment vs. expense</td><td>What does a founder actually lose when they cut QC first? · How does this reframe a board conversation? · One piece where the investment paid off invisibly · When does over-investing in QC become its own mistake? · The client who understood this from day one</td><td>High</td></tr>
+              <tr><td class="strong">Root-cause tracing</td><td>What does it feel like to be the department blamed at the end of the chain? · How does she prove which department actually caused it? · The hardest root cause she ever traced · When does tracing the cause matter less than just fixing the piece? · One case where two departments both denied it</td><td>High</td></tr>
+              <tr><td class="strong">Export vs. domestic standard</td><td>What does the domestic market actually accept that export never would? · Has she ever had to explain this gap to a founder who didn't believe her? · One piece that failed at export standard but would've sold fine domestically · Is the gap closing or widening? · What would it take for India to close it</td><td>High</td></tr>
+              <tr><td class="strong">The respect boundary</td><td>What does disrespect actually look like in a vendor meeting? · How did she know it was time to walk? · Has she ever regretted staying too long in a bad relationship? · How does a founder earn her trust early? · What changed once she stopped tolerating it</td><td>Medium</td></tr>
+              <tr><td class="strong">Training the eye</td><td>How long does it actually take to see a flaw instantly? · What's the first thing she checks on any piece? · Can this be taught, or only absorbed over years? · One moment she got it wrong early in her career · What she still can't see as fast as she'd like</td><td>Medium</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Source 2 — Live Signal Feed</h4>
+          <p class="explain" style="margin-bottom:.8rem;">Monitor weekly. Every signal is context for her existing expertise — not news to report.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>India–China–Thailand sourcing shifts and geopolitical trade tension</li>
+            <li><span class="check-mark">✓</span>New-age DTC jewelry brand funding and scaling announcements</li>
+            <li><span class="check-mark">✓</span>GJEPC and SEZ export policy changes</li>
+            <li><span class="check-mark">✓</span>Quality-tech and AI-based inspection adoption in manufacturing</li>
+            <li><span class="check-mark">✓</span>Major trade show cycles — IIJS Mumbai, VicenzaOro, JCK</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Source 3 — Story Call Expansion</h4>
+          <p class="explain" style="margin-bottom:.5rem;"><b style="color:var(--text);">Q2 (Month 4) — Named permissions and specific pieces</b></p>
+          <p class="explain" style="margin-bottom:.8rem;">Follow up on Ankit, Anupam, Vipin, and Keval permissions · specific rejected-piece stories with department-level detail.</p>
+          <p class="explain" style="margin-bottom:.5rem;"><b style="color:var(--text);">Q3 (Month 7) — Teaching &amp; developing others</b></p>
+          <p class="explain" style="margin-bottom:.8rem;">Visiting faculty stories at SNDT and IIGJ · what she'd teach differently now · students she still hears from.</p>
+          <p class="explain" style="margin-bottom:.5rem;"><b style="color:var(--text);">Q4 (Month 10) — The future of Lupin Co.</b></p>
+          <p class="explain">Her unresolved question about combining consulting with the make-to-order jewelry idea · what she wants the practice to look like in five years.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:1rem;">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Source 4 — Audience Feedback Loop</h4>
+          <p class="explain" style="margin-bottom:.8rem;">Log after every post: the question asked most in comments · a phrase a commenter used better than the post said it · any topic the comments opened that the post didn't address.</p>
+          <span class="flag info">Empty at launch. Activate at first post.</span>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Source 5 — Sequel Trigger System</h4>
+          <p class="explain">Warranted when the original generated unanswered questions, a live sourcing event made it newly relevant, or her position has evolved. A sequel is always more specific than the original.</p>
+          <blockquote class="stamped" style="font-size:.92rem;margin-top:.8rem;">"A few months ago I wrote about where quality actually breaks down. A few people asked me how to catch it earlier. Here's what I should have added."</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 05 -->
+    <section class="chapter" id="ch05">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 05</span>
+        <h2 class="ch-title">The 5 Post Types</h2>
+        <p class="ch-why">Not all content does the same job. Without defined post types, the writer defaults to whatever feels natural that week — and the mix becomes accidental rather than strategic.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="obj-card">
+          <div class="obj-tag">Type 01 · Recognition</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Piece Portrait</h4>
+          <p style="margin-bottom:.6rem;">Examine one specific piece (anonymised) in physical detail — what she saw, what standard it met or missed, what that revealed. Never names the brand.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> 1/week months 1–3; 1/fortnight after.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"I picked up the ring. Turned it once. There it was — a scratch the salesperson hadn't even seen yet."</p>
+          <span class="flag">Never combine with a list or advice post.</span>
+        </div>
+        <div class="obj-card">
+          <div class="obj-tag">Type 02 · Relief</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Manufacturing Truth</h4>
+          <p style="margin-bottom:.6rem;">Explain how the production chain actually breaks down — department handoffs, communication gaps, where "chalta hai" enters the process. Situation → gap → root cause → honest limitation.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> 1/fortnight.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"The final polish looked fine. The problem wasn't there. It was three stations back, and nobody flagged it."</p>
+          <span class="flag">Never combine with The Piece Portrait.</span>
+        </div>
+        <div class="obj-card">
+          <div class="obj-tag">Type 03 · Appetite</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Root-Cause Craft Post</h4>
+          <p style="margin-bottom:.6rem;">Make the interior discipline of tracing an issue to its source visible. Specific moment → the trace-back → what changes once the real cause is named.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> 1/fortnight.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"Two departments both denied it was theirs. Here's how you actually find out who's right."</p>
+          <span class="flag">Never combine with regulatory or export-policy commentary.</span>
+        </div>
+        <div class="obj-card">
+          <div class="obj-tag">Type 04 · Clarity</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Founder Lens</h4>
+          <p style="margin-bottom:.6rem;">A specific, non-generic way for a CEO to think about quality economically. Situation → what's beneath the surface → the reframe → what changes on the balance sheet.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> 1/week early months — highest-engagement type.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"It's not an expense. It's an investment — and the difference shows up later, not now."</p>
+          <span class="flag">Never combine with Piece Portrait unless purely illustrating the lens.</span>
+        </div>
+        <div class="obj-card" style="grid-column:1/-1;">
+          <div class="obj-tag">Type 05 · Orientation</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Live Take</h4>
+          <p style="margin-bottom:.6rem;">Connect her expertise to something happening now in sourcing or the industry. Trend described (never editorialised at policy level) → connected to lived expertise → one specific position.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> Maximum 1/month, triggered by live signal, never scheduled.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"Everyone's talking about the shift away from Chinese manufacturing. Nobody's asking whether the standard travels with it."</p>
+          <span class="flag">Never combine with regulatory commentary, named institutions, or trade policy predictions.</span>
+        </div>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Weekly Post Ratio</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Phase</th><th>Frequency</th><th>Mix</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Months 1–3</td><td>3 per week</td><td>2 Founder Lens + 1 Piece Portrait</td></tr>
+              <tr><td class="strong">Months 4–6</td><td>2 per week</td><td>1 Founder Lens or Piece Portrait + 1 Manufacturing Truth or Root-Cause Craft</td></tr>
+              <tr><td class="strong">Month 6 onward</td><td>1–2 per week</td><td>Balanced across all types. Live Takes when warranted.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 06 -->
+    <section class="chapter" id="ch06">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 06</span>
+        <h2 class="ch-title">Post Anatomy — The Master Template</h2>
+        <p class="ch-why">Structure is not a constraint on creativity — it's what makes creativity repeatable. A writer who internalises this template can produce posts quickly without sacrificing quality.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Section 1 — The Hook</h3>
+        <p class="lead">Lines 1–2 combined: ≤210 characters. Blank line after line 2 is mandatory, every time. Never in hook: "I want to share...", yes/no questions, bullet points, emoji (confirm with client), hashtags.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:22%;">Hook Type</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Object-drop (primary)</td><td>"I picked up the ring. Turned it once under the light."</td></tr>
+              <tr><td class="strong">The Verdict</td><td>"Okay. Not okay. That's the whole meeting, most days."</td></tr>
+              <tr><td class="strong">Specific Number</td><td>"Point six percent. That's what a rejection rate looks like when the system actually works."</td></tr>
+              <tr><td class="strong">Confession</td><td>"For years I thought I was hired to catch flaws. I was actually hired to find where they started."</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Section 2 — The Body</h4>
+          <p class="explain">Must be specific: the piece or situation, which stage of production, exact detail of what was seen, what was at stake. Every body must have a moment where the outcome is not guaranteed. Max 3 lines per paragraph, blank line between every paragraph.</p>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Section 3 — The Pivot</h4>
+          <p class="explain" style="margin-bottom:.7rem;">Bridges the specific piece or moment to the wider insight. Approved constructions:</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>"It didn't start there. It started three departments earlier."</li>
+            <li><span class="check-mark">✓</span>"That's when I understood what I was actually being paid for."</li>
+            <li><span class="check-mark">✓</span>"It took me years to stop treating that as the exception."</li>
+            <li><span class="check-mark">✓</span>"The piece isn't really the story. The handoff before it is."</li>
+            <li><span class="check-mark">✓</span>"What I didn't say in that meeting was..."</li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Section 4 — The Framework (Optional)</h3>
+        <p class="lead">Use in Manufacturing Truth and Founder Lens posts only. Never in Piece Portrait. Rarely in Root-Cause Craft. 3–4 bullets maximum. No two bullets start with the same word.</p>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Section 5 — The Close</h3>
+        <div class="grid-2">
+          <div class="card">
+            <div class="obj-tag">Option A — Truth Statement</div>
+            <p class="explain" style="margin:.5rem 0;">One sentence naming what is true. Weight, not uplift.</p>
+            <blockquote class="stamped" style="font-size:.95rem;">"The client didn't reject the batch because of the metal. They rejected it because somewhere in the chain, someone decided 'close enough' was good enough. It wasn't."</blockquote>
+          </div>
+          <div class="card">
+            <div class="obj-tag">Option B — Stakes Question</div>
+            <p class="explain" style="margin:.5rem 0;">One question that opens rather than closes.</p>
+            <blockquote class="stamped" style="font-size:.95rem;">"If you're scaling faster than your rejection reports are catching up — the question isn't whether there's a problem. It's whether you'll find it before your client does."</blockquote>
+          </div>
+        </div>
+        <span class="flag" style="margin-top:1.2rem;">Never use both close types in the same post.</span>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Section 6 — Hashtags</h3>
+        <p class="lead" style="margin-bottom:.3rem;">3–5 maximum, end of post after a blank line. 1 broad tag, 1–2 topic-specific, 1 personal brand tag (develop after first 5 posts). No hashtags in body text.</p>
+        <span class="flag">Confirm with Snehal whether she wants hashtags at all.</span>
+      </section>
+    </section>
+
+    <!-- CHAPTER 07 -->
+    <section class="chapter" id="ch07">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 07</span>
+        <h2 class="ch-title">Draft-to-Publish Workflow</h2>
+        <p class="ch-why">The absence of a protocol does not prevent conflict — it ensures the writer capitulates silently, the manifesto erodes, and the content gradually becomes generic.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">The Five Stages</h3>
+        <div class="stepper card">
+          <div class="step"><span class="step-num">01</span><div class="step-body"><h4>The Brief</h4><p>Complete the Post Brief Template. If any field can't be filled, the post isn't ready. Get approval via WhatsApp or a 5-minute call before writing.</p></div><span class="step-time">15–20 min</span></div>
+          <div class="step"><span class="step-num">02</span><div class="step-body"><h4>First Draft</h4><p>Write from the brief only. Follow Voice Rules during writing, not after. Write through to the close before self-editing.</p></div><span class="step-time">45–60 min</span></div>
+          <div class="step"><span class="step-num">03</span><div class="step-body"><h4>Four Editing Passes</h4><p>See Chapter 08. Do not combine passes.</p></div><span class="step-time">30–40 min</span></div>
+          <div class="step"><span class="step-num">04</span><div class="step-body"><h4>Client Review</h4><p>Send one post at a time via Google Doc or WhatsApp. Apply the Conflict Resolution Protocol if changes are requested. Complete only when she says "good to go."</p></div><span class="step-time">—</span></div>
+          <div class="step"><span class="step-num">05</span><div class="step-body"><h4>Publish and Log</h4><p>Publish Tuesday–Thursday, 8–9am IST. Log date, post type, persona, hook. Monitor comments 48 hours. Never publish two posts the same day.</p></div><span class="step-time">10 min</span></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Post Brief Template</h3>
+        <div class="card">
+          <div class="grid-2" style="gap:.9rem;">
+            <div><div class="persona-row"><div class="k">Post Type</div></div></div>
+            <div><div class="persona-row"><div class="k">Target Persona</div></div></div>
+            <div><div class="persona-row"><div class="k">Core Emotion to Resolve</div></div></div>
+            <div><div class="persona-row"><div class="k">Specific Piece or Situation</div></div></div>
+            <div><div class="persona-row"><div class="k">The Insight (one sentence)</div></div></div>
+            <div><div class="persona-row"><div class="k">The Hook (first line)</div></div></div>
+            <div><div class="persona-row"><div class="k">Close Type</div><div class="v">Truth Statement or Stakes Question</div></div></div>
+            <div><div class="persona-row"><div class="k">Which Objective This Serves</div><div class="v">CEO reputation / durable practice / Lupin Co. positioning</div></div></div>
+          </div>
+          <div class="persona-row" style="margin-top:.4rem;"><div class="k">What This Post Must Not Do</div></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Conflict Resolution Protocol</h3>
+        <div class="table-wrap" style="margin-bottom:1.2rem;">
+          <table>
+            <thead><tr><th>Decision Type</th><th>Owner</th><th>Final Authority</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Factual accuracy</td><td>Snehal</td><td>Snehal</td></tr>
+              <tr><td class="strong">Does this sound like me?</td><td>Snehal</td><td>Snehal</td></tr>
+              <tr><td class="strong">Voice rule compliance</td><td>Writer</td><td>Voice Bible</td></tr>
+              <tr><td class="strong">Strategic post intent</td><td>Both</td><td>Both</td></tr>
+              <tr><td class="strong">Comfort and risk (naming, NDA)</td><td>Snehal</td><td>Snehal</td></tr>
+              <tr><td class="strong">Legal / confidentiality</td><td>Snehal</td><td>Snehal</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-3">
+          <div class="obj-card"><div class="obj-tag">Type 01</div><h4 class="sub-title" style="font-size:.98rem;">Authenticity Conflict</h4><p style="font-style:italic;margin-bottom:.5rem;">"This doesn't sound like me."</p><p>Return to the Voice Bible. If it follows the rules, explain which and why. If it violates one, rewrite immediately. If it follows rules but is still rejected — the Bible needs updating.</p></div>
+          <div class="obj-card"><div class="obj-tag">Type 02</div><h4 class="sub-title" style="font-size:.98rem;">Comfort Conflict</h4><p style="font-style:italic;margin-bottom:.5rem;">"I'm not comfortable naming this."</p><p>Her comfort is a hard constraint. Ask: "What part specifically — the person, the company, or the detail?" Adjust accordingly. Do not argue.</p></div>
+          <div class="obj-card"><div class="obj-tag">Type 03</div><h4 class="sub-title" style="font-size:.98rem;">Preference Conflict</h4><p style="font-style:italic;margin-bottom:.5rem;">"I would have said it differently."</p><p>If it reflects genuine voice, accept and update the Bible. If it makes the post more generic, say so once, then comply. Do not repeat the objection.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 08 -->
+    <section class="chapter" id="ch08">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 08</span>
+        <h2 class="ch-title">The Editing Protocol</h2>
+        <p class="ch-why">Editing is not proofreading. Each pass has a single focus. Combining passes produces posts that pass no standard rigorously.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="pass-card">
+          <div class="pass-head"><span class="pass-tag">Pass 01</span><h4>The Truth Pass</h4></div>
+          <p class="pass-focus">Specificity and factual grounding only.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Every claim is traceable to the transcript or a validated story call</li>
+            <li><span class="check-mark">✓</span>Every number is grounded in what Snehal actually said</li>
+            <li><span class="check-mark">✓</span>No extrapolation beyond the brief</li>
+            <li><span class="check-mark">✓</span>No brand named negatively or made identifiable without consent</li>
+            <li><span class="check-mark">✓</span>No un-consented client rejection-rate or process data disclosed</li>
+            <li><span class="check-mark">✓</span>The insight actually follows from the story</li>
+          </ul>
+        </div>
+        <div class="pass-card">
+          <div class="pass-head"><span class="pass-tag">Pass 02</span><h4>The Voice Pass</h4></div>
+          <p class="pass-focus">Voice Bible compliance only.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>No phrase from Voice DON'TS appears anywhere</li>
+            <li><span class="check-mark">✓</span>Post opens with the object or scene, not a claim</li>
+            <li><span class="check-mark">✓</span>Standard named, not the brand</li>
+            <li><span class="check-mark">✓</span>All people identified by their role in the chain, not by name, unless consented</li>
+            <li><span class="check-mark">✓</span>Close avoids motivation — lands on truth or stakes</li>
+            <li><span class="check-mark">✓</span>At least one Sentence Signature Table construction present</li>
+          </ul>
+        </div>
+        <div class="pass-card">
+          <div class="pass-head"><span class="pass-tag">Pass 03</span><h4>The Rhythm Pass</h4></div>
+          <p class="pass-focus">Structure and pacing only.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Read aloud — mark every hesitation, rewrite it</li>
+            <li><span class="check-mark">✓</span>Hook ≤210 characters on lines 1–2</li>
+            <li><span class="check-mark">✓</span>Blank line after line 2, and after every paragraph</li>
+            <li><span class="check-mark">✓</span>No paragraph longer than 3 lines</li>
+            <li><span class="check-mark">✓</span>Pivot uses an approved construction</li>
+            <li><span class="check-mark">✓</span>Last sentence feels complete read alone</li>
+          </ul>
+        </div>
+        <div class="pass-card">
+          <div class="pass-head"><span class="pass-tag">Pass 04</span><h4>The Business Pass</h4></div>
+          <p class="pass-focus">Strategic intent only.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Post does what the brief said it would do</li>
+            <li><span class="check-mark">✓</span>Reaches the target persona — fear or desire felt</li>
+            <li><span class="check-mark">✓</span>Named professional objective served</li>
+            <li><span class="check-mark">✓</span>Post does not do what the brief prohibited</li>
+            <li><span class="check-mark">✓</span>No Hard Constraint violated</li>
+          </ul>
+        </div>
+      </div>
+      <span class="flag" style="margin-top:1.2rem;">Section C (Business Pass) failure: post returns to writer. No client review. No exceptions.</span>
+    </section>
+
+    <!-- CHAPTER 09 -->
+    <section class="chapter" id="ch09">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 09</span>
+        <h2 class="ch-title">Content Architecture</h2>
+        <p class="ch-why">Frequency, mix, and sequencing are strategic decisions, not scheduling decisions. An architecture that's wrong by design produces diminishing returns regardless of post quality.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Post Mix</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Post Type</th><th style="width:8%;">% of Total</th><th>Logic</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Founder Lens</td><td><span class="badge-pct">40%</span></td><td>Fastest trust-builder with Arjun; directly serves Objective 01 and 03</td></tr>
+              <tr><td class="strong">Piece Portrait</td><td><span class="badge-pct">30%</span></td><td>Establishes Snehal as a distinct, credible eye; highest-read by Elena and Keya</td></tr>
+              <tr><td class="strong">Manufacturing Truth</td><td><span class="badge-pct">20%</span></td><td>Highest authority-positioning value; two per month maximum</td></tr>
+              <tr><td class="strong">Root-Cause Craft</td><td><span class="badge-pct">10%</span></td><td>Most differentiated content; one per month sustainable</td></tr>
+              <tr><td class="strong">Live Take</td><td><span class="badge-pct">—</span></td><td>Event-driven; maximum once per month, never scheduled</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Sequencing Rules</h4>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Never follow a Piece Portrait directly with a Manufacturing Truth — buffer with a Founder Lens</li>
+            <li><span class="check-mark">✓</span>A Root-Cause Craft post earns the right to be followed by a more assertive position</li>
+            <li><span class="check-mark">✓</span>Never stack two high-specificity technical posts — follow with a Founder Lens</li>
+            <li><span class="check-mark">✓</span>Never open a week with a Live Take</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Topic Rotation</h4>
+          <p class="explain">A topic can be revisited after 8 posts on other subjects (~3–4 weeks). Earlier, only as a sequel. Repetition says the same thing again; a sequel goes somewhere the original did not — a specific piece, a counter-example, a time-elapsed update.</p>
+        </div>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Seasonal Overlay</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:18%;">Period</th><th>Content Opportunity</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Jan – Feb</td><td>IIJS Mumbai trade show season — Founder Lens and Manufacturing Truth on what buyers actually inspect at the booth.</td></tr>
+              <tr><td class="strong">Apr – May</td><td>VicenzaOro and European trade cycles — Live Take opportunities on India–Europe sourcing standards, if a live signal warrants it.</td></tr>
+              <tr><td class="strong">Jun – Sep</td><td>Wedding-season production ramp-up in India — Piece Portrait and Manufacturing Truth on volume-driven quality pressure.</td></tr>
+              <tr><td class="strong">Oct – Dec</td><td>Festive and wedding season peak (Diwali, year-end weddings) plus Western holiday gifting for European clients — highest-stakes production window; Root-Cause Craft content on what breaks under peak volume.</td></tr>
+              <tr><td class="strong">January</td><td>Year-end reflection — Founder Lens on what the past year's rejections actually taught, specific and honest, not motivational.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 10 -->
+    <section class="chapter" id="ch10">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 10</span>
+        <h2 class="ch-title">Quality Control Gates</h2>
+        <p class="ch-why">The Editing Protocol improves a post. This gate decides whether it's ready to leave the writer's hands — a different question entirely.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">A · Voice &amp; Identity</h4>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Could only have been written by Snehal — swap her name for any other quality consultant; if it still works, it fails</li>
+            <li><span class="check-mark">✓</span>No phrase from Voice DON'TS appears anywhere</li>
+            <li><span class="check-mark">✓</span>At least one Sentence Signature Table construction present</li>
+            <li><span class="check-mark">✓</span>Emotional temperature matches her transcript register — blunt, warm, direct</li>
+            <li><span class="check-mark">✓</span>No claim contradicts the Value System (Ch. 01B)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">B · Structure &amp; Rhythm</h4>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Hook ≤210 characters on lines 1–2</li>
+            <li><span class="check-mark">✓</span>Blank line rule followed throughout</li>
+            <li><span class="check-mark">✓</span>Pivot present, approved construction used</li>
+            <li><span class="check-mark">✓</span>Close is Truth Statement or Stakes Question — not both, not neither</li>
+            <li><span class="check-mark">✓</span>Reads fluently aloud, no re-reading needed</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">C · Business Logic</h4>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Serves a named professional objective</li>
+            <li><span class="check-mark">✓</span>Reaches the named primary persona — fear or desire felt</li>
+            <li><span class="check-mark">✓</span>Does exactly what the brief specified</li>
+            <li><span class="check-mark">✓</span>Does not do what the brief prohibited</li>
+            <li><span class="check-mark">✓</span>No Hard Constraint violated — no brand named negatively, no un-consented name, no confidential data</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="limits-box" style="margin-top:1.4rem;">
+        <h4>Quality Gate Rule</h4>
+        <p style="color:var(--text-muted);font-size:13.8px;">Any failure in Section C = post returns to the writer immediately. No client review. No exceptions. Failures in Section A or B = targeted fix — not a full rewrite unless the failure is structural.</p>
+      </div>
+
+      <div class="statement" style="margin-top:2rem;margin-left:1.6rem;max-width:720px;">What this document cannot do is replace the client's review — not because it's incomplete, but because Snehal is the only person who knows when something feels wrong in a way she cannot yet articulate.</div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="doc-footer">
+  <span>Snehal Ban — Personal Brand Manifesto · v1.0 · RocketRush · July 2026</span>
+  <span>Confidential — Not for distribution</span>
+</footer>
+
+<script>
+  const navButtons = document.querySelectorAll('.nav-item');
+  const chapters = document.querySelectorAll('.chapter');
+  const label = document.getElementById('chapter-label');
+  const mainEl = document.querySelector('.main');
+  const panel = document.getElementById('mobile-nav-panel');
+  const hamburger = document.getElementById('hamburger-btn');
+  const closeBtn = document.getElementById('panel-close-btn');
+
+  function openPanel(){
+    panel.classList.add('open');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePanel(){
+    panel.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closePanel(); });
+
+  navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      const labelText = btn.dataset.label;
+      chapters.forEach(c => c.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+      navButtons.forEach(b => b.classList.toggle('active', b.dataset.target === target));
+      label.textContent = labelText;
+      closePanel();
+      mainEl.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({top: document.querySelector('.shell').offsetTop - 10, behavior: 'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
