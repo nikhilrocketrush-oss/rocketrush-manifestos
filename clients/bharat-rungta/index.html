@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bharat Rungta — Personal Brand Manifesto</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#0a0c0b;
+  --bg-hero-1:#0a0d0c;
+  --bg-hero-2:#0d1310;
+  --surface:#121613;
+  --surface-raised:#171d19;
+  --border:rgba(255,255,255,0.08);
+  --border-strong:rgba(255,255,255,0.14);
+  --accent:#35d48c;
+  --accent-soft:rgba(53,212,140,0.5);
+  --accent-dim:rgba(53,212,140,0.1);
+  --accent-dim-2:rgba(53,212,140,0.18);
+  --text:#f1f4f2;
+  --text-muted:#9aa39d;
+  --text-faint:#5f6864;
+  --warn:#e2664f;
+  --warn-dim:rgba(226,102,79,0.1);
+  --warn-dim-2:rgba(226,102,79,0.18);
+  --display:'Poppins','Montserrat',sans-serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --radius:14px;
+  --radius-sm:9px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  width:100%;
+}
+::selection{background:var(--accent-dim-2);color:var(--text);}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important;scroll-behavior:auto !important;}}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(53,212,140,0.10), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 0%, rgba(53,212,140,0.06), transparent 55%),
+    linear-gradient(180deg,var(--bg-hero-1),var(--bg-hero-2));
+  border-bottom:1px solid var(--border);
+  padding:2.4rem 3rem 3.2rem;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(ellipse 900px 500px at 20% 0%, black, transparent 70%);
+  pointer-events:none;
+}
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
+  z-index:1;
+  margin-bottom:2.6rem;
+}
+.brandmark{
+  display:flex;
+  align-items:center;
+  gap:.55rem;
+  font-size:12.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  font-weight:600;
+}
+.brandmark .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent-soft);}
+.hero-tags{display:flex;gap:.5rem;}
+.pill{
+  border:1px solid var(--border-strong);
+  padding:.3rem .7rem;
+  border-radius:100px;
+  font-size:11px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  font-weight:600;
+  white-space:nowrap;
+}
+.pill.accent{border-color:var(--accent-soft);color:var(--accent);background:var(--accent-dim);}
+
+.hero-body{position:relative;z-index:1;max-width:760px;}
+.hero-eyebrow{
+  font-family:var(--display);
+  font-weight:600;
+  color:var(--accent);
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-bottom:.9rem;
+}
+.hero-title{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(2.2rem,5vw,3.6rem);
+  line-height:1.05;
+  letter-spacing:-.01em;
+  margin-bottom:.85rem;
+}
+.hero-sub{
+  font-size:clamp(1.05rem,2vw,1.3rem);
+  color:var(--text-muted);
+  max-width:600px;
+  margin-bottom:1.6rem;
+}
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem .9rem;
+  font-size:13px;
+  color:var(--text-muted);
+  align-items:center;
+}
+.hero-meta span:not(:last-child)::after{content:'·';margin-left:.9rem;color:var(--text-faint);}
+
+.stat-row{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin-top:2.4rem;
+}
+.stat-cell{
+  background:rgba(10,13,12,0.6);
+  padding:1.1rem 1.3rem;
+}
+.stat-num{
+  font-family:var(--display);
+  font-size:1.7rem;
+  font-weight:600;
+  color:var(--accent);
+  line-height:1;
+  margin-bottom:.4rem;
+}
+.stat-label{font-size:12px;color:var(--text-muted);letter-spacing:.02em;}
+
+/* ---------- SHELL ---------- */
+.shell{display:flex;align-items:flex-start;}
+.sidebar{
+  width:272px;
+  flex-shrink:0;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  border-right:1px solid var(--border);
+  padding:1.6rem 1rem;
+  background:var(--bg);
+}
+.sidebar-label{
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  padding:0 .8rem;
+  margin-bottom:.7rem;
+  font-weight:600;
+}
+.nav-item{
+  display:flex;
+  align-items:baseline;
+  gap:.7rem;
+  width:100%;
+  text-align:left;
+  background:none;
+  border:none;
+  color:var(--text-muted);
+  font-family:var(--sans);
+  font-size:13.5px;
+  font-weight:500;
+  padding:.68rem .8rem;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  border-left:2px solid transparent;
+  margin-bottom:.1rem;
+}
+.nav-item .num{
+  font-family:var(--display);
+  font-weight:600;
+  color:var(--text-faint);
+  font-size:13px;
+  min-width:20px;
+}
+.nav-item:hover{background:var(--surface);color:var(--text);}
+.nav-item.active{background:var(--accent-dim);color:var(--text);border-left-color:var(--accent);}
+.nav-item.active .num{color:var(--accent);}
+
+.main{flex:1;min-width:0;padding:2.2rem 3rem 6rem;max-width:1500px;}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding-bottom:1.4rem;
+  margin-bottom:2.2rem;
+  border-bottom:1px solid var(--border);
+}
+.crumb{font-size:12.5px;color:var(--text-faint);letter-spacing:.03em;}
+.crumb b{color:var(--text-muted);}
+.hamburger-btn{
+  display:none;
+  align-items:center;justify-content:center;
+  width:40px;height:40px;flex-shrink:0;
+  background:var(--surface);border:1px solid var(--border-strong);border-radius:9px;
+  color:var(--text);cursor:pointer;
+}
+.hamburger-btn .bars{display:block;width:16px;height:2px;background:var(--text);position:relative;}
+.hamburger-btn .bars::before,.hamburger-btn .bars::after{content:'';position:absolute;left:0;width:16px;height:2px;background:var(--text);}
+.hamburger-btn .bars::before{top:-5px;}
+.hamburger-btn .bars::after{top:5px;}
+
+.mobile-nav-panel{
+  display:none;
+  position:fixed;inset:0;z-index:60;
+  background:rgba(8,10,9,0.98);
+  padding:1.4rem 1.2rem 2rem;
+  overflow-y:auto;
+  flex-direction:column;
+}
+.mobile-nav-panel.open{display:flex;}
+.mobile-panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;}
+.mobile-panel-head h3{font-family:var(--display);font-weight:600;font-size:1.05rem;}
+.panel-close-btn{
+  width:38px;height:38px;border-radius:9px;background:var(--surface);border:1px solid var(--border-strong);
+  color:var(--text);font-size:17px;cursor:pointer;flex-shrink:0;
+}
+.mobile-nav-panel .nav-item{font-size:14.5px;padding:.85rem .9rem;min-height:46px;}
+
+.chapter{display:none;}
+.chapter.active{display:block;animation:fade .35s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+.ch-head{margin-bottom:2.2rem;max-width:800px;}
+.ch-num{
+  font-family:var(--display);
+  font-weight:600;
+  color:var(--accent);
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:.5rem;
+  display:block;
+}
+.ch-title{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(1.6rem,3vw,2.1rem);
+  letter-spacing:-.01em;
+  margin-bottom:.7rem;
+}
+.ch-why{
+  font-family:var(--sans);
+  font-weight:500;
+  color:var(--text-muted);
+  font-size:14.5px;
+  line-height:1.6;
+  border-left:2px solid var(--border-strong);
+  padding-left:1rem;
+}
+
+h3.sec-title{
+  font-size:11.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+  margin:2.6rem 0 1rem;
+}
+h3.sec-title:first-of-type{margin-top:0;}
+h4.sub-title{font-family:var(--display);font-weight:600;font-size:1.15rem;margin-bottom:.6rem;}
+p.lead{color:var(--text-muted);margin-bottom:1.1rem;max-width:720px;}
+
+/* ---------- CARDS / GRIDS ---------- */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.4rem 1.5rem;
+}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+@media(max-width:1000px){.grid-3{grid-template-columns:1fr;}.grid-2{grid-template-columns:1fr;}}
+
+/* belief cards */
+.belief-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.5rem 1.6rem;
+  margin-bottom:1rem;
+  position:relative;
+}
+.belief-top{display:flex;align-items:center;gap:.9rem;margin-bottom:.8rem;}
+.seal{
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;color:var(--accent);font-size:13px;
+  flex-shrink:0;
+}
+.belief-name{font-family:var(--display);font-weight:600;font-size:1.08rem;}
+blockquote.stamped{
+  position:relative;
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:1.02rem;
+  line-height:1.55;
+  color:var(--text);
+  padding-left:1.4rem;
+  border-left:2px solid var(--accent);
+  margin:.9rem 0;
+}
+p.explain{color:var(--text-muted);font-size:14px;}
+
+/* tag flags */
+.flag{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:12px;color:var(--warn);background:var(--warn-dim);
+  border:1px solid var(--warn-dim-2);
+  padding:.35rem .7rem;border-radius:8px;margin-top:.7rem;
+}
+.flag::before{content:'⚑';font-size:11px;}
+.flag.info{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-dim-2);}
+.flag.info::before{content:'ⓘ';}
+
+/* limits box */
+.limits-box{
+  border:1px solid var(--warn-dim-2);
+  background:var(--warn-dim);
+  border-radius:var(--radius);
+  padding:1.3rem 1.5rem;
+}
+.limits-box h4{color:var(--warn);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.8rem;}
+.limits-box ul{list-style:none;color:var(--text-muted);font-size:14px;}
+.limits-box li{padding:.35rem 0 .35rem 1.1rem;position:relative;}
+.limits-box li::before{content:'—';position:absolute;left:0;color:var(--warn);}
+
+/* objective / persona cards */
+.obj-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.3rem 1.4rem;
+}
+.obj-tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.5rem;}
+.obj-target{font-size:12.5px;color:var(--text-faint);margin-bottom:.6rem;}
+.obj-target b{color:var(--text-muted);}
+.obj-card p{color:var(--text-muted);font-size:13.8px;}
+
+.persona-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.4rem 1.5rem;
+}
+.persona-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.9rem;}
+.persona-name{font-family:var(--display);font-weight:600;font-size:1.2rem;}
+.persona-age{font-size:12px;color:var(--text-faint);}
+.persona-row{margin-bottom:.85rem;}
+.persona-row .k{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint);margin-bottom:.25rem;}
+.persona-row .v{font-size:13.5px;color:var(--text-muted);line-height:1.55;}
+.persona-row .v.emph{color:var(--accent);font-weight:600;}
+
+/* tables */
+.table-wrap{overflow-x:auto;max-width:100%;border:1px solid var(--border);border-radius:var(--radius);-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;font-size:13.3px;}
+thead th{
+  text-align:left;background:var(--surface-raised);
+  color:var(--accent);font-size:10.8px;letter-spacing:.08em;text-transform:uppercase;
+  padding:.75rem .9rem;border-bottom:1px solid var(--border);white-space:nowrap;
+}
+tbody td{padding:.8rem .9rem;border-bottom:1px solid var(--border);color:var(--text-muted);vertical-align:top;}
+tbody tr:last-child td{border-bottom:none;}
+tbody td.strong{color:var(--text);font-weight:600;}
+tbody tr:hover td{background:rgba(255,255,255,0.015);}
+
+/* wrong/right */
+.voice-rule{margin-bottom:1.6rem;padding-bottom:1.6rem;border-bottom:1px solid var(--border);}
+.voice-rule:last-child{border-bottom:none;}
+.vr-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.4rem;}
+.vr-num{font-family:var(--display);font-weight:700;color:var(--accent);font-size:13px;}
+.vr-desc{color:var(--text-muted);font-size:13.5px;margin-bottom:.4rem;}
+.vr-applies{color:var(--text-faint);font-size:12px;margin-bottom:.9rem;}
+.wrong-right{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:800px){.wrong-right{grid-template-columns:1fr;}}
+.wr{border-radius:var(--radius-sm);padding:.9rem 1rem;font-size:13.3px;line-height:1.55;}
+.wr.wrong{background:var(--warn-dim);border:1px solid var(--warn-dim-2);color:#d9b3ac;}
+.wr.right{background:var(--accent-dim);border:1px solid var(--accent-dim-2);color:#c9ead9;}
+.wr-label{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:.4rem;}
+.wr.wrong .wr-label{color:var(--warn);}
+.wr.right .wr-label{color:var(--accent);}
+
+/* pill lists */
+.pill-list{display:flex;flex-wrap:wrap;gap:.5rem;}
+.pill-item{
+  font-size:12.6px;padding:.5rem .8rem;border-radius:9px;line-height:1.4;max-width:100%;
+}
+.pill-item.no{background:var(--warn-dim);border:1px solid var(--warn-dim-2);color:#d9b3ac;}
+.pill-item.yes{background:var(--accent-dim);border:1px solid var(--accent-dim-2);color:#c9ead9;}
+
+/* checklist */
+.checklist{list-style:none;}
+.checklist li{
+  display:flex;gap:.7rem;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:13.6px;color:var(--text-muted);
+}
+.checklist li:last-child{border-bottom:none;}
+.check-mark{
+  flex-shrink:0;width:18px;height:18px;border-radius:5px;border:1px solid var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:11px;margin-top:.1rem;
+}
+
+/* stepper */
+.stepper{display:flex;flex-direction:column;gap:0;}
+.step{display:flex;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--border);}
+.step:last-child{border-bottom:none;}
+.step-num{
+  font-family:var(--display);font-weight:700;color:var(--accent);font-size:1.05rem;
+  min-width:28px;
+}
+.step-body h4{font-size:14.5px;margin-bottom:.25rem;}
+.step-body p{color:var(--text-muted);font-size:13.3px;}
+.step-time{color:var(--text-faint);font-size:11.5px;margin-left:auto;white-space:nowrap;padding-left:1rem;}
+
+/* pass cards */
+.pass-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem 1.4rem;}
+.pass-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem;}
+.pass-tag{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-dim-2);padding:.25rem .55rem;border-radius:6px;}
+.pass-card h4{font-family:var(--display);font-weight:600;font-size:1.05rem;}
+.pass-focus{color:var(--text-muted);font-size:13px;margin-bottom:.9rem;}
+
+/* quote statement */
+.statement{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.5;color:var(--text);
+  padding:1.8rem 0;position:relative;
+}
+.statement::before{content:'“';color:var(--accent);font-size:2.2rem;font-style:normal;position:absolute;left:-1.6rem;top:1.1rem;opacity:.7;}
+
+.note{color:var(--text-faint);font-size:12.5px;font-style:italic;margin-top:.6rem;}
+.badge-pct{
+  display:inline-block;min-width:44px;text-align:center;font-weight:700;color:var(--accent);
+  background:var(--accent-dim);border:1px solid var(--accent-dim-2);border-radius:7px;padding:.2rem .5rem;font-size:12.5px;
+}
+
+section.block{margin-bottom:2.6rem;}
+section.block:last-child{margin-bottom:0;}
+
+footer.doc-footer{
+  border-top:1px solid var(--border);
+  padding:2rem 3rem;
+  display:flex;justify-content:space-between;align-items:center;
+  color:var(--text-faint);font-size:12px;flex-wrap:wrap;gap:.6rem;
+}
+
+/* ---------- TABLET ---------- */
+@media(max-width:1180px){
+  .sidebar{width:230px;}
+  .main{padding:2rem 2rem 5rem;}
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:880px){
+  .hero{padding:1.6rem 1.2rem 2rem;}
+  .hero-top{margin-bottom:1.6rem;}
+  .stat-row{grid-template-columns:repeat(2,1fr);}
+  .shell{flex-direction:column;}
+  .sidebar{display:none;}
+  .main{padding:1.4rem 1.1rem 4rem;max-width:100%;}
+  .topbar{
+    position:sticky;top:0;z-index:20;background:var(--bg);
+    margin:-1.4rem -1.1rem 1.6rem;padding:1rem 1.1rem;
+  }
+  .crumb:last-child{display:none;}
+  .hamburger-btn{display:flex;}
+  .step{flex-wrap:wrap;}
+  .step-time{margin-left:38px;padding-left:0;}
+  footer.doc-footer{padding:1.6rem 1.2rem;flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-top">
+    <div class="brandmark"><span class="dot"></span>RocketRush × Bharat Rungta</div>
+    <div class="hero-tags">
+      <span class="pill">v1.2 · June 2026</span>
+      <span class="pill accent">Confidential</span>
+    </div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-eyebrow">Personal Brand Manifesto</div>
+    <h1 class="hero-title">Bharat Rungta turns career complexity into clarity.</h1>
+    <p class="hero-sub">27 years of watching how institutions actually work, combined with the rare willingness to say exactly what he could not do.</p>
+    <div class="hero-meta">
+      <span>Head of Wholesale Banking, RBL Bank</span>
+      <span>CA Rank Holder (ICAI)</span>
+      <span>Company Secretary</span>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat-cell"><div class="stat-num">27+</div><div class="stat-label">Years across 5 banking functions</div></div>
+    <div class="stat-cell"><div class="stat-num">6</div><div class="stat-label">Core beliefs, transcript-grounded</div></div>
+    <div class="stat-cell"><div class="stat-num">3</div><div class="stat-label">Professional objectives</div></div>
+    <div class="stat-cell"><div class="stat-num">3</div><div class="stat-label">Audience personas mapped</div></div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-label">Manifesto Chapters</div>
+    <button class="nav-item active" data-target="ch01" data-label="Who Bharat Rungta Is"><span class="num">01</span>Who He Is</button>
+    <button class="nav-item" data-target="ch02" data-label="The Audience Map"><span class="num">02</span>Audience Map</button>
+    <button class="nav-item" data-target="ch03" data-label="The Voice Bible"><span class="num">03</span>Voice Bible</button>
+    <button class="nav-item" data-target="ch04" data-label="Content Intelligence System"><span class="num">04</span>Content Intelligence</button>
+    <button class="nav-item" data-target="ch05" data-label="The 5 Post Types"><span class="num">05</span>Post Types</button>
+    <button class="nav-item" data-target="ch06" data-label="Post Anatomy"><span class="num">06</span>Post Anatomy</button>
+    <button class="nav-item" data-target="ch07" data-label="Draft-to-Publish Workflow"><span class="num">07</span>Draft-to-Publish</button>
+    <button class="nav-item" data-target="ch08" data-label="The Editing Protocol"><span class="num">08</span>Editing Protocol</button>
+    <button class="nav-item" data-target="ch09" data-label="Content Architecture"><span class="num">09</span>Content Architecture</button>
+    <button class="nav-item" data-target="ch10" data-label="Quality Control Gates"><span class="num">10</span>Quality Gates</button>
+  </nav>
+
+  <div class="mobile-nav-panel" id="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Chapter menu">
+    <div class="mobile-panel-head">
+      <h3>Manifesto Chapters</h3>
+      <button class="panel-close-btn" id="panel-close-btn" aria-label="Close menu">✕</button>
+    </div>
+    <button class="nav-item active" data-target="ch01" data-label="Who Bharat Rungta Is"><span class="num">01</span>Who He Is</button>
+    <button class="nav-item" data-target="ch02" data-label="The Audience Map"><span class="num">02</span>Audience Map</button>
+    <button class="nav-item" data-target="ch03" data-label="The Voice Bible"><span class="num">03</span>Voice Bible</button>
+    <button class="nav-item" data-target="ch04" data-label="Content Intelligence System"><span class="num">04</span>Content Intelligence</button>
+    <button class="nav-item" data-target="ch05" data-label="The 5 Post Types"><span class="num">05</span>Post Types</button>
+    <button class="nav-item" data-target="ch06" data-label="Post Anatomy"><span class="num">06</span>Post Anatomy</button>
+    <button class="nav-item" data-target="ch07" data-label="Draft-to-Publish Workflow"><span class="num">07</span>Draft-to-Publish</button>
+    <button class="nav-item" data-target="ch08" data-label="The Editing Protocol"><span class="num">08</span>Editing Protocol</button>
+    <button class="nav-item" data-target="ch09" data-label="Content Architecture"><span class="num">09</span>Content Architecture</button>
+    <button class="nav-item" data-target="ch10" data-label="Quality Control Gates"><span class="num">10</span>Quality Gates</button>
+  </div>
+
+  <main class="main">
+    <div class="topbar">
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Open chapter menu" aria-controls="mobile-nav-panel" aria-expanded="false">
+        <span class="bars"></span>
+      </button>
+      <div class="crumb">Manifesto / <b id="chapter-label">Who Bharat Rungta Is</b></div>
+      <div class="crumb">Prepared by RocketRush</div>
+    </div>
+
+    <!-- CHAPTER 01 -->
+    <section class="chapter active" id="ch01">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 01</span>
+        <h2 class="ch-title">Who Bharat Rungta Is</h2>
+        <p class="ch-why">Every post decision — topic, tone, claim, angle — must be traceable back to who this person is. Content that skips this chapter is technically correct and personally wrong.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">1A · The Person</h3>
+        <p class="lead">He built his career by watching people more carefully than most and holding what he extracted for decades. He still quotes stories from bosses twenty-five years ago. He does not create philosophy — he distils it from observation. Every post must feel like a story told over coffee, not a lesson delivered from a stage.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Period</th><th>Role</th><th>Institution</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Late 1990s</td><td>Manager</td><td>ICICI Bank — started Calcutta, moved to Bombay Treasury</td></tr>
+              <tr><td class="strong">Brief stint</td><td>Manager</td><td>Standard Chartered Bank</td></tr>
+              <tr><td class="strong">~1 year</td><td>Self-employed</td><td>Voice BPO attempt, then CA practice — returned to corporate</td></tr>
+              <tr><td class="strong">Several years</td><td>VP to Group EVP</td><td>Yes Bank — multiple roles across corporate banking</td></tr>
+              <tr><td class="strong">2011–present</td><td>Multiple roles to Head of Wholesale Banking</td><td>RBL Bank (~400-person team)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="explain" style="margin-top:.9rem;">Personal: joint family background, transportation business family, Calcutta roots, based in Mumbai. Wife gives candid feedback — mentioned as a trusted source.</p>
+        <span class="flag">Verify CA rank before mentioning in any post.</span>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">1B · The Value System</h3>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">01</span><span class="belief-name">There is an answer to every situation.</span></div>
+          <blockquote class="stamped">"In any situation you can find a good answer."</blockquote>
+          <p class="explain">Instilled watching senior bankers on a Bombay treasury floor. He will never publish a pure complaint post without a path through it.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">02</span><span class="belief-name">Admiration and imitation are not the same thing.</span></div>
+          <blockquote class="stamped">"I admired it, but I could never embrace... I should know what I should impress and what I should not."</blockquote>
+          <p class="explain">He spent years admiring qualities he could not replicate and made peace with that. Posts that position him as the all-around perfect leader will feel false.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">03</span><span class="belief-name">Keep the window open.</span></div>
+          <blockquote class="stamped">"Keep that window to go back and discuss again. Don't close the window."</blockquote>
+          <p class="explain">Governs negotiations, feedback, any conversation not going his way. His posts will not wrap up cleanly. The truth is messier and he respects that.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">04</span><span class="belief-name">Institutional requirement supersedes individual aspiration — and that is not a bad thing.</span></div>
+          <blockquote class="stamped">"Institutional requirement supersedes individual aspiration is given, which over a period of time one realizes is the reality of life."</blockquote>
+          <p class="explain">He has been on both sides of the decision. He does not hold bitterness. This makes him credible to anyone who has been passed over and needs the system explained without being told the system is wrong.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">05</span><span class="belief-name">Every professional has a core.</span></div>
+          <blockquote class="stamped">"One person's core was discipline... another's was conversation. There is a difference between the two."</blockquote>
+          <p class="explain">His own core is complexity, not sales. Content must reflect specificity about professional identity — not generic 'work harder' narratives.</p>
+        </div>
+
+        <div class="belief-card">
+          <div class="belief-top"><span class="seal">06</span><span class="belief-name">We are all biased. The only question is whether we know it.</span></div>
+          <blockquote class="stamped">"I keep my bias. It is that we will all evaluate things from the perspective which we have seen in life."</blockquote>
+          <p class="explain">He built a correction system around his own bias. He will never frame bias as a moral failing — only as a structural feature requiring a practical workaround.</p>
+        </div>
+
+        <div class="limits-box" style="margin-top:1.5rem;">
+          <h4>Hard Limits — Never Publish</h4>
+          <ul>
+            <li>RBL financial metrics, credit data, internal decisions</li>
+            <li>Named competitors or former employers in negative framing</li>
+            <li>Named clients — always anonymise with sector/role only</li>
+            <li>RBI or regulatory commentary</li>
+            <li>Macroeconomic predictions</li>
+            <li>Personal family detail beyond what is already voluntarily shared</li>
+            <li>Any material non-public information about a listed entity</li>
+          </ul>
+        </div>
+        <span class="flag">Confirm with Bharat whether RBL Bank has an internal social media policy for senior executives.</span>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">1C · Professional Objectives</h3>
+        <div class="grid-3">
+          <div class="obj-card">
+            <div class="obj-tag">Objective 01</div>
+            <h4 class="sub-title" style="font-size:1rem;">CEO Candidacy</h4>
+            <div class="obj-target"><b>Target —</b> RBL Board members, external headhunters, independent directors at mid-to-large private sector banks.</div>
+            <p>Content must demonstrate board-level thinking, comfort with institutional ambiguity, culture-building credibility. Must never read as job-seeking. Authority through insight, not visible ambition.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-tag">Objective 02</div>
+            <h4 class="sub-title" style="font-size:1rem;">Internal Influence at Scale</h4>
+            <div class="obj-target"><b>Target —</b> RBL mid-level managers (AVP/VP), junior bankers (first 3–5 years), peers across the organisation.</div>
+            <p>LinkedIn as a broadcast channel reaching people he will never meet one-on-one. Content must feel like a person talking, not management communicating.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-tag">Objective 03</div>
+            <h4 class="sub-title" style="font-size:1rem;">Leadership Influence</h4>
+            <div class="obj-target"><b>Primary —</b> people inside RBL who manage teams. <b>Secondary —</b> managers and leaders across corporate India, any sector.</div>
+            <p>Purely the craft of building good leaders. Not banking commentary. Not market positioning.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">1D · Unique Advantage</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:20%;">Dimension</th><th>What It Is</th><th>Why Hard to Replicate</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Lived Experience</td><td>27+ years rotating across five distinct banking functions. Also attempted entrepreneurship and returned.</td><td>Most senior bankers have depth in one vertical. Bharat has rotated deliberately and reflects on each period with precision — not summarising, remembering.</td></tr>
+              <tr><td class="strong">Emotional Clarity</td><td>Can name the exact quality each person contributed to him and why he could or could not absorb it.</td><td>Self-knowledge at this specificity, combined with genuine humility, is rare in banking leadership.</td></tr>
+              <tr><td class="strong">Unique Process</td><td>Anti-bias hiring: routes candidates through interviewers whose flavour is opposite to his own.</td><td>A named, practised mechanism — not a philosophy. Specific enough to be teachable.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">1E · Zone of Genius</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:26%;">Topic</th><th>Why He Owns It</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">How institutional decisions actually get made</td><td>Been on both sides. Has a frameworks-based explanation that is neither bitter nor defensive.</td></tr>
+              <tr><td class="strong">Admiration vs. absorption</td><td>Lived this distinction for 27 years with specific examples.</td></tr>
+              <tr><td class="strong">How bias works without moral accusation</td><td>Built a system around his own bias. Can explain the mechanism, not just the concept.</td></tr>
+              <tr><td class="strong">What separates good from great — the invisible qualities</td><td>Can describe from the inside: the 12:16 response to a 12:15 question, what perfection looks like vs. discipline.</td></tr>
+              <tr><td class="strong">How leaders build other leaders</td><td>Has watched bosses develop him and has developed others. Knows what transfers and what does not.</td></tr>
+              <tr><td class="strong">What deal-making feels like from the inside</td><td>The desert water metaphor. Can make the craft of banking visceral and accessible.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="statement" style="margin-left:1.6rem;">Bharat Rungta turns career complexity into clarity by combining 27 years of watching how institutions actually work with the rare willingness to say exactly what he could not do.</div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 02 -->
+    <section class="chapter" id="ch02">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 02</span>
+        <h2 class="ch-title">The Audience Map</h2>
+        <p class="ch-why">Every post is a decision about who you are writing for and what they need to feel. Content that skips this chapter is technically correct and emotionally inert.</p>
+      </div>
+      <span class="flag info">All audience language is inferred. No posts or comment data exists. Validate against first month of comments.</span>
+
+      <section class="block" style="margin-top:1.8rem;">
+        <h3 class="sec-title">The Three Personas</h3>
+        <div class="grid-3">
+          <div class="persona-card">
+            <div class="persona-head"><span class="persona-name">Aditya</span><span class="persona-age">25–35</span></div>
+            <p class="explain" style="margin-bottom:.9rem;">Early career, first or second job, technically capable, confused by the invisible rules. Performs well on paper and senses paper is not the whole story.</p>
+            <div class="persona-row"><div class="k">Fear</div><div class="v">"I'm performing but I'm not being seen — and I don't know if the game is rigged or if I'm missing something nobody will tell me."</div></div>
+            <div class="persona-row"><div class="k">Stops scrolling for</div><div class="v">"Why good people don't get promoted — and what the people making that decision are actually looking at."</div></div>
+            <div class="persona-row"><div class="k">Must feel</div><div class="v emph">Seen</div></div>
+          </div>
+          <div class="persona-card">
+            <div class="persona-head"><span class="persona-name">Sangeeta</span><span class="persona-age">35–50</span></div>
+            <p class="explain" style="margin-bottom:.9rem;">Very senior, heads a function or vertical. Delivers results. Increasingly unsure whether she is actually developing the people around her or just managing them.</p>
+            <div class="persona-row"><div class="k">Fear</div><div class="v">"I've been promoted into leading people but nobody trained me to develop people. I manage. I don't know if I'm actually building anyone."</div></div>
+            <div class="persona-row"><div class="k">Stops scrolling for</div><div class="v">"What it actually means to develop someone — not manage them, develop them."</div></div>
+            <div class="persona-row"><div class="k">Must feel</div><div class="v emph">Recognition</div></div>
+          </div>
+          <div class="persona-card">
+            <div class="persona-head"><span class="persona-name">Rajesh</span><span class="persona-age">50+</span></div>
+            <p class="explain" style="margin-bottom:.9rem;">MD/CEO level, board member, or headhunter. Does not need inspiration. Reads to find someone thinking at the same altitude. Rarely comments — the signal is a DM or a coffee meeting.</p>
+            <div class="persona-row"><div class="k">Fear</div><div class="v">"We keep promoting performance and getting managers. We need leaders. I don't know how to tell the difference on paper."</div></div>
+            <div class="persona-row"><div class="k">Stops scrolling for</div><div class="v">Any post where Bharat demonstrates institutional thinking — not banking knowledge, leadership architecture.</div></div>
+            <div class="persona-row"><div class="k">Must feel</div><div class="v emph">Confidence</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Voice of Customer (Provisional)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Frustration</th><th>Fear</th><th>Desire</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>"I do the work but no one seems to notice." <i>(Aditya)</i></td><td>"I'll hit 35 and realise I peaked as an AVP." <i>(Aditya)</i></td><td>"I want someone to tell me the actual rules, not the official version." <i>(Aditya)</i></td></tr>
+              <tr><td>2</td><td>"My boss never tells me what I'm doing wrong." <i>(Aditya)</i></td><td>"The people getting promoted are less qualified than me." <i>(Aditya)</i></td><td>"I want to understand what the people at the top are thinking." <i>(Aditya)</i></td></tr>
+              <tr><td>3</td><td>"Every post is about mindset. Nobody talks about how this works." <i>(Aditya)</i></td><td>"I'm learning to execute but not to think." <i>(Aditya)</i></td><td>"I want one mentor who will be honest with me." <i>(Aditya)</i></td></tr>
+              <tr><td>4</td><td>"I give feedback but nothing changes." <i>(Sangeeta)</i></td><td>"I'm not building leaders. I'm building people who need me." <i>(Sangeeta)</i></td><td>"I want to know how to transfer what I know, not just what I do." <i>(Sangeeta)</i></td></tr>
+              <tr><td>5</td><td>"My team performs but they don't grow." <i>(Sangeeta)</i></td><td>"When I leave, everything I built will need me to come back." <i>(Sangeeta)</i></td><td>"I want the people I manage to be better leaders because of me." <i>(Sangeeta)</i></td></tr>
+              <tr><td>6</td><td>"We keep promoting high performers and getting bad managers." <i>(Rajesh)</i></td><td>"The next generation of leaders is not ready." <i>(Rajesh)</i></td><td>"I want people who think about leadership rigorously, without the theatre." <i>(Rajesh)</i></td></tr>
+              <tr><td>7</td><td>"Senior hires look good on paper and disappoint in practice." <i>(Rajesh)</i></td><td>"I'm going to hand this institution to the wrong person." <i>(Rajesh)</i></td><td>"I want evidence — not a pitch — that someone is ready." <i>(Rajesh)</i></td></tr>
+              <tr><td>8</td><td>"Nobody trained me to develop people." <i>(Sangeeta)</i></td><td>"I'll repeat my worst boss's mistakes." <i>(Sangeeta)</i></td><td>"I want a real framework for feedback — not a training module." <i>(Sangeeta)</i></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Emotion-to-Action</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Persona</th><th>Emotion to Resolve</th><th>Post Must Do</th><th>Post Must Not Do</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Aditya</td><td>Confusion about why the rules are not what he was told</td><td>Name the actual mechanism with enough specificity that it feels honest</td><td>Give a generic 'be more visible' answer</td></tr>
+              <tr><td class="strong">Sangeeta</td><td>Recognition that she manages but may not be developing people</td><td>Offer a specific, honest frame for what development actually requires</td><td>Inspire without informing — she needs craft, not fuel</td></tr>
+              <tr><td class="strong">Rajesh</td><td>Rational evaluation — does this person think at the level I need?</td><td>Demonstrate institutional thinking about culture, people, and leadership</td><td>Sound like someone pitching for a job</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 03 -->
+    <section class="chapter" id="ch03">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 03</span>
+        <h2 class="ch-title">The Voice Bible</h2>
+        <p class="ch-why">LinkedIn content fails most often not from bad ideas but from a voice the client cannot recognise as their own. These are structural rules derived from how he actually speaks, not aesthetic preferences.</p>
+      </div>
+      <span class="flag info">Track B — Provisional. Derived from spoken language, not written output. Validate all rules against the first five posts before treating as fixed.</span>
+
+      <section class="block" style="margin-top:1.8rem;">
+        <h3 class="sec-title">The 7 Voice Rules</h3>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">01</span><h4 class="sub-title" style="font-size:1rem;">Earn the Lesson Through the Story</h4></div>
+          <p class="vr-desc">The insight is never stated first. The story arrives first. The lesson is what the story forces.</p>
+          <p class="vr-applies">Applies to all post types.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>Great leaders create psychological safety. Here's how to build it on your team.</div>
+            <div class="wr right"><span class="wr-label">Right</span>There was a meeting. I was the most junior person in the room. My boss stepped out, looked back, and only asked me to come along. He didn't say a word about trust. But I understood exactly what he was telling me.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">02</span><h4 class="sub-title" style="font-size:1rem;">Name People by Their Core Quality, Not Their Title</h4></div>
+          <p class="vr-desc">Every person is identified by what they are, not what they do.</p>
+          <p class="vr-applies">Applies every time a person (anonymised) is introduced.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>My former boss at a leading private sector bank taught me about discipline.</div>
+            <div class="wr right"><span class="wr-label">Right</span>I had a boss once — one of my closest friends today — who was discipline itself. Whatever wild example of professional discipline you can think of, he had it covered.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">03</span><h4 class="sub-title" style="font-size:1rem;">Include the Failure of Absorption</h4></div>
+          <p class="vr-desc">Bharat explicitly names what he could not learn from the people he most admired. This is structural, not performative.</p>
+          <p class="vr-applies">Applies to any post involving a mentor, boss, or formative influence.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>He taught me the power of discipline and I have practised it every day since.</div>
+            <div class="wr right"><span class="wr-label">Right</span>I tried. I genuinely tried to build what he had. And I couldn't. My mind goes deep on one thing until it's solved, and that is not what organised discipline looks like. Eventually, I stopped fighting it.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">04</span><h4 class="sub-title" style="font-size:1rem;">Ground Every Metaphor in the Physical World</h4></div>
+          <p class="vr-desc">Analogies are always concrete and tactile. His best: closing a deal is like finding a water valve in a Rajasthani desert and drinking.</p>
+          <p class="vr-applies">Applies to any post about the craft or feeling of work.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>Closing a deal is about aligning stakeholders toward a shared outcome.</div>
+            <div class="wr right"><span class="wr-label">Right</span>Picture a desert. No tap. You're thirsty in the way that makes everything else irrelevant. You find a valve. You pull. Water comes. That's what closing a transaction feels like.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">05</span><h4 class="sub-title" style="font-size:1rem;">Offer the Counterargument to Your Own Position</h4></div>
+          <p class="vr-desc">He does not argue one side and leave. He complicates his own positions.</p>
+          <p class="vr-applies">Applies to any post making a claim about professional success or leadership.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>Discipline is the only thing that separates good professionals from great ones.</div>
+            <div class="wr right"><span class="wr-label">Right</span>Discipline is one kind of excellence. Perfection is another. Navigation is a third. They are not interchangeable. An institution needs all three — just not from the same person.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">06</span><h4 class="sub-title" style="font-size:1rem;">Write as if Telling One Person a Story Over Coffee</h4></div>
+          <p class="vr-desc">Intimate conversation, not public address.</p>
+          <p class="vr-applies">Applies to all posts. Any post that sounds like a speech has broken this rule.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>Leaders who master the art of feedback create high-performance cultures.</div>
+            <div class="wr right"><span class="wr-label">Right</span>He forwarded me something. Something the bank had done well. My first response — and I am a little embarrassed by this — was to say, I did that four months ago. He let that sit. Then he said: it's not about the trumpet.</div>
+          </div>
+        </div>
+
+        <div class="voice-rule">
+          <div class="vr-head"><span class="vr-num">07</span><h4 class="sub-title" style="font-size:1rem;">Close on Truth, Not Motivation</h4></div>
+          <p class="vr-desc">The close is quiet and specific. It lands with weight, not volume.</p>
+          <p class="vr-applies">Applies to every post without exception.</p>
+          <div class="wrong-right">
+            <div class="wr wrong"><span class="wr-label">Wrong</span>Because at the end of the day, the best investment you can make is in yourself.</div>
+            <div class="wr right"><span class="wr-label">Right</span>I still have that feedback. Ten years later. Not because I followed every word of it. Because it was the most honest thing anyone put on paper about who I was at that age.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Voice Don'ts</h3>
+        <div class="pill-list">
+          <span class="pill-item no">"At the end of the day..." — filler bridge</span>
+          <span class="pill-item no">"Game-changer" — marketing register</span>
+          <span class="pill-item no">"I've always believed..." — states belief before the story earns it</span>
+          <span class="pill-item no">"Here are 5 things great leaders do..." — listicle framing</span>
+          <span class="pill-item no">"The key takeaway is..." — announces the lesson early</span>
+          <span class="pill-item no">"In today's fast-paced world..." — violates every rule at once</span>
+          <span class="pill-item no">"My mentor always said..." — skips failure-of-absorption</span>
+          <span class="pill-item no">"Success is a journey..." — wisdom-poster register</span>
+          <span class="pill-item no">"Trust the process" — unqualified, no counterargument</span>
+          <span class="pill-item no">"I am passionate about..." — pitch deck language</span>
+          <span class="pill-item no">"Excited to share..." — performed, not described</span>
+          <span class="pill-item no">"We need to talk about..." — announces, doesn't arrive</span>
+          <span class="pill-item no">"The banking industry..." as a monolith — he thinks in people</span>
+          <span class="pill-item no">Clean resolution endings — not honest enough</span>
+          <span class="pill-item no">Performative humility — false modesty</span>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Voice Dos</h3>
+        <div class="pill-list">
+          <span class="pill-item yes">Open with a scene — a person, a moment, a room</span>
+          <span class="pill-item yes">Use "so" as a connector from event to meaning</span>
+          <span class="pill-item yes">Anonymise people with texture, not labels</span>
+          <span class="pill-item yes">Include what he couldn't do, every time</span>
+          <span class="pill-item yes">State the comfortable reading, then name what it misses</span>
+          <span class="pill-item yes">Let physical metaphors run their full course</span>
+          <span class="pill-item yes">Name institution type, never the institution</span>
+          <span class="pill-item yes">End on a quiet specific moment</span>
+          <span class="pill-item yes">Use second person sparingly, so it lands</span>
+          <span class="pill-item yes">Return to the opening image at the close</span>
+          <span class="pill-item yes">State the failed attempt before the success</span>
+          <span class="pill-item yes">Complicate the lesson before closing on it</span>
+          <span class="pill-item yes">Use precise numbers — "four months ago," "six people"</span>
+          <span class="pill-item yes">Write about people unlike him — that's where self-knowledge lives</span>
+          <span class="pill-item yes">Let a brief digression exist — it builds intimacy</span>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Sentence Signature Table</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:20%;">Pattern</th><th>Example</th><th style="width:26%;">When to Use</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">The Bracketed Limitation</td><td>"I admired it, but I could never embrace it."</td><td>After describing a quality in someone he observed</td></tr>
+              <tr><td class="strong">The Precise Qualifier</td><td>"Probably three, four times in six months. Maybe six."</td><td>When recalling events — approximate numbers feel more honest</td></tr>
+              <tr><td class="strong">The Quiet Naming</td><td>"He left an impression — not because he told me something, but because of how he sat in that room."</td><td>When the influence is atmospheric, not instructional</td></tr>
+              <tr><td class="strong">The Core Distinction</td><td>"One person's core was discipline. Another's was perfection. They are not the same thing."</td><td>When making a distinction most people flatten</td></tr>
+              <tr><td class="strong">The Turn</td><td>"And I thought, why not me? But when I actually reflected on it..."</td><td>At the pivot between emotional reaction and reframe</td></tr>
+              <tr><td class="strong">The Returning Image</td><td>Opens: "Picture a desert." Closes: "That's what it feels like to pull the valve and drink."</td><td>In any post with an extended metaphor</td></tr>
+              <tr><td class="strong">The Crediting Clause</td><td>"It is not my story. I will tell you who told it to me."</td><td>When sharing wisdom from another source</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 04 -->
+    <section class="chapter" id="ch04">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 04</span>
+        <h2 class="ch-title">The Content Intelligence System</h2>
+        <p class="ch-why">The failure mode of most content strategies is not quality — it is depletion. By month three, the writer is either recycling or manufacturing. This system prevents both.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">The Content Universe — Four Layers</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Layer</th><th>What Lives Here</th><th>Depletion</th><th>How to Extend</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Surface</td><td>Career arc, entrepreneurship stint, five role rotations, desert water metaphor, choosing job over family business</td><td>Month 1–2</td><td>Do not repeat. Reference context only.</td></tr>
+              <tr><td class="strong">Middle</td><td>Boss portraits (disciplined, perfectionist, navigator), the feedback document re-read every six months, anti-bias hiring, craft of wholesale banking</td><td>Month 3–6</td><td>Second story call: people-development moments, decisions under uncertainty</td></tr>
+              <tr><td class="strong">Deep</td><td>27-year view on what makes a complete leader, private thesis on succession, what corporate India gets wrong</td><td>Month 6–18</td><td>Requires continued story calls — do not rush</td></tr>
+              <tr><td class="strong">Live</td><td>Talent and culture shifts, peer CEO appointments, manager-to-leader trends, Gen Z expectations, current team observations</td><td>Continuous</td><td>Weekly signal monitoring</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Source 1 — Angle Expansion Matrix</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:22%;">Topic</th><th>Five Remaining Angles</th><th style="width:9%;">Priority</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">The Bombay treasury floor</td><td>What does the client across the desk experience? · What had to be true about Bharat at that age? · Has a situation in the last decade tested this belief? · When does this belief NOT hold? · One specific deal where it was tested</td><td>High</td></tr>
+              <tr><td class="strong">Admiration vs. absorption</td><td>What happens when you DO absorb a quality? · How does this apply developing someone on your team? · How did he discover this distinction? · Has his position changed? · One moment where failure of absorption helped him</td><td>High</td></tr>
+              <tr><td class="strong">Why institutional decisions make sense only in retrospect</td><td>When do they NOT make sense even in retrospect? · How does this reframe Aditya's experience? · How does Sangeeta use this with her team? · When does 'institutional logic' become an excuse? · The corporate solutions / CCR decision from transcript</td><td>High</td></tr>
+              <tr><td class="strong">The bias correction system</td><td>When does correcting for bias introduce a new one? · How can Sangeeta use this building a team? · What mistake created the system? · Does it work — what evidence? · One hire that validated, one that did not</td><td>Medium</td></tr>
+              <tr><td class="strong">What developing a person actually looks like</td><td>What does NOT developing someone look like? · What does it feel like to be developed? · First time Bharat tried and failed · When is 'developing' actually making someone dependent? · The feedback document re-read every six months</td><td>High</td></tr>
+              <tr><td class="strong">The window rule</td><td>When should you actually close? · How does a team leader use this with a difficult person? · The conversation where he closed a window he shouldn't have · Has he ever regretted keeping one open? · The most difficult negotiation left open</td><td>High</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Source 2 — Live Signal Feed</h4>
+          <p class="explain" style="margin-bottom:.8rem;">Monitor weekly. Every signal is context for his existing expertise — not news to report.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>CEO and MD appointments — illustrates how institutions choose leaders</li>
+            <li><span class="check-mark">✓</span>Manager-to-leader transition trending on LinkedIn India</li>
+            <li><span class="check-mark">✓</span>Gen Z professional expectations — insider view via startup clients</li>
+            <li><span class="check-mark">✓</span>Talent and attrition patterns</li>
+            <li><span class="check-mark">✓</span>MBA / business school hiring season (Feb–Apr)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Source 3 — Story Call Expansion</h4>
+          <p class="explain" style="margin-bottom:.5rem;"><b style="color:var(--text);">Q2 (Month 4) — Leadership & developing people</b></p>
+          <p class="explain" style="margin-bottom:.8rem;">Hardest thing learned about developing vs. managing · one team member's growth traced in detail · what he believes organisations get wrong about succession.</p>
+          <p class="explain" style="margin-bottom:.5rem;"><b style="color:var(--text);">Q3 (Month 7) — Failure & recovery</b></p>
+          <p class="explain" style="margin-bottom:.8rem;">Moments he misjudged readiness or closed a window too early · patterns in how the best leaders develop people.</p>
+          <p class="explain" style="margin-bottom:.5rem;"><b style="color:var(--text);">Q4 (Month 10) — Private philosophy</b></p>
+          <p class="explain">What would make peers uncomfortable if published · the single most important thing in the first ten years · what he wishes someone told him at 28.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:1rem;">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Source 4 — Audience Feedback Loop</h4>
+          <p class="explain" style="margin-bottom:.8rem;">Log after every post: the question asked most in comments · a phrase a commenter used better than the post said it · any topic the comments opened that the post didn't address.</p>
+          <span class="flag info">Empty at launch. Activate at first post.</span>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Source 5 — Sequel Trigger System</h4>
+          <p class="explain">Warranted when the original generated unanswered questions, a live event made it newly relevant, or his position has evolved. A sequel is always more specific than the original.</p>
+          <blockquote class="stamped" style="font-size:.92rem;margin-top:.8rem;">"A few months ago I wrote about X. A few people asked me Y. Here is what I should have added."</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 05 -->
+    <section class="chapter" id="ch05">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 05</span>
+        <h2 class="ch-title">The 5 Post Types</h2>
+        <p class="ch-why">Not all content does the same job. Without defined post types, the writer defaults to whatever feels natural that week — and the mix becomes accidental rather than strategic.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="obj-card">
+          <div class="obj-tag">Type 01 · Recognition</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Person Portrait</h4>
+          <p style="margin-bottom:.6rem;">Introduce one real person (anonymised) who changed how Bharat sees something. Core quality in physical detail, failure-of-absorption clause, what transferred and what didn't.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> 1/week months 1–3; 1/fortnight after.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"The most disciplined professional I have ever met could not explain how he did it — and what I finally stopped trying to copy."</p>
+          <span class="flag">Never combine with a list or advice post.</span>
+        </div>
+        <div class="obj-card">
+          <div class="obj-tag">Type 02 · Relief</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Institutional Truth</h4>
+          <p style="margin-bottom:.6rem;">Explain how organisations actually work — decisions, promotions, biases, structures. Situation → gap → lens → honest limitation.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> 1/fortnight.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"When I was passed over for a role I had prepared for, my first reaction was: why? Three years later, sitting on the other side of that decision, I understood."</p>
+          <span class="flag">Never combine with The Person Portrait.</span>
+        </div>
+        <div class="obj-card">
+          <div class="obj-tag">Type 03 · Appetite</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Leadership Craft Post</h4>
+          <p style="margin-bottom:.6rem;">Make the interior work of developing people visible. Specific moment → craft distinction → what the reader can carry into their next conversation.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> 1/fortnight.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"The best feedback I ever gave took thirty seconds. The worst took an hour. Here's what I eventually understood about the difference."</p>
+          <span class="flag">Never combine with regulatory or institutional commentary.</span>
+        </div>
+        <div class="obj-card">
+          <div class="obj-tag">Type 04 · Clarity</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Career Lens</h4>
+          <p style="margin-bottom:.6rem;">A specific, non-motivational way to read a career situation. Situation → what's beneath the surface → the reframe → what changes.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> 1/week early months — highest-engagement type.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"You can admire a quality without being able to absorb it. These are not the same thing."</p>
+          <span class="flag">Never combine with Person Portrait unless purely illustrating the lens.</span>
+        </div>
+        <div class="obj-card" style="grid-column:1/-1;">
+          <div class="obj-tag">Type 05 · Orientation</div>
+          <h4 class="sub-title" style="font-size:1.02rem;">The Live Take</h4>
+          <p style="margin-bottom:.6rem;">Connect Bharat's expertise to something happening now. Trend described (never editorialised at policy level) → connected to lived expertise → one specific position.</p>
+          <p class="explain"><b style="color:var(--text-muted);">Frequency —</b> Maximum 1/month, triggered by live signal, never scheduled.</p>
+          <p class="explain" style="font-style:italic;margin:.4rem 0;">"Everyone is talking about Gen Z not wanting to stay. Nobody is talking about what we are actually offering when they arrive."</p>
+          <span class="flag">Never combine with regulatory commentary, named institutions, market calls.</span>
+        </div>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Weekly Post Ratio</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Phase</th><th>Frequency</th><th>Mix</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Months 1–3</td><td>3 per week</td><td>2 Career Lens + 1 Person Portrait</td></tr>
+              <tr><td class="strong">Months 4–6</td><td>2 per week</td><td>1 Career Lens or Person Portrait + 1 Institutional Truth or Leadership Craft</td></tr>
+              <tr><td class="strong">Month 6 onward</td><td>1–2 per week</td><td>Balanced across all types. Live Takes when warranted.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 06 -->
+    <section class="chapter" id="ch06">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 06</span>
+        <h2 class="ch-title">Post Anatomy — The Master Template</h2>
+        <p class="ch-why">Structure is not a constraint on creativity — it's what makes creativity repeatable. A writer who internalises this template can produce posts quickly without sacrificing quality.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Section 1 — The Hook</h3>
+        <p class="lead">Lines 1–2 combined: ≤210 characters. Blank line after line 2 is mandatory, every time. Never in hook: "I want to share...", yes/no questions, bullet points, emoji (confirm with client), hashtags.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:22%;">Hook Type</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Scene-drop (primary)</td><td>"There was a meeting. I was the most junior person in the room."</td></tr>
+              <tr><td class="strong">Reversal</td><td>"The best feedback I ever received wasn't from a boss who liked me."</td></tr>
+              <tr><td class="strong">Specific Number</td><td>"Twenty-five years later, I still have the email."</td></tr>
+              <tr><td class="strong">Confession</td><td>"For years, I confused admiring a quality with absorbing one. They are not the same thing."</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Section 2 — The Body</h4>
+          <p class="explain">Must be specific: core quality (never named), career stage, exact moment, what was at stake. Every body must have a moment where the outcome is not guaranteed. Max 3 lines per paragraph, blank line between every paragraph.</p>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Section 3 — The Pivot</h4>
+          <p class="explain" style="margin-bottom:.7rem;">Bridges story to insight. Approved constructions:</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>"And that's the thing I didn't understand then, but I understand now."</li>
+            <li><span class="check-mark">✓</span>"I've thought about that conversation a lot since then."</li>
+            <li><span class="check-mark">✓</span>"It took me X years to understand what actually happened there."</li>
+            <li><span class="check-mark">✓</span>"What I didn't know at the time was..."</li>
+            <li><span class="check-mark">✓</span>"The story isn't really about X. It's about Y."</li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Section 4 — The Framework (Optional)</h3>
+        <p class="lead">Use in Institutional Truth and Career Lens posts only. Never in Person Portrait. Rarely in Leadership Craft. 3–4 bullets maximum. No two bullets start with the same word.</p>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Section 5 — The Close</h3>
+        <div class="grid-2">
+          <div class="card">
+            <div class="obj-tag">Option A — Truth Statement</div>
+            <p class="explain" style="margin:.5rem 0;">One sentence naming what is true. Weight, not uplift.</p>
+            <blockquote class="stamped" style="font-size:.95rem;">"The most honest feedback I ever received wasn't the kindest. But it was the one that lasted. And there is no substitute for that."</blockquote>
+          </div>
+          <div class="card">
+            <div class="obj-tag">Option B — Stakes Question</div>
+            <p class="explain" style="margin:.5rem 0;">One question that opens rather than closes.</p>
+            <blockquote class="stamped" style="font-size:.95rem;">"If you're wondering why the people around you are moving faster — before you ask what they have that you don't, ask whether you actually want what they have, or what you think it represents."</blockquote>
+          </div>
+        </div>
+        <span class="flag" style="margin-top:1rem;">Never use both close types in the same post.</span>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Section 6 — Hashtags</h3>
+        <p class="lead" style="margin-bottom:.3rem;">3–5 maximum, end of post after a blank line. 1 broad tag, 1–2 topic-specific, 1 personal brand tag (develop after first 5 posts). No hashtags in body text.</p>
+        <span class="flag">Confirm with Bharat whether he wants hashtags at all.</span>
+      </section>
+    </section>
+
+    <!-- CHAPTER 07 -->
+    <section class="chapter" id="ch07">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 07</span>
+        <h2 class="ch-title">Draft-to-Publish Workflow</h2>
+        <p class="ch-why">The absence of a protocol does not prevent conflict — it ensures the writer capitulates silently, the manifesto erodes, and the content gradually becomes generic.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">The Five Stages</h3>
+        <div class="stepper card">
+          <div class="step"><span class="step-num">01</span><div class="step-body"><h4>The Brief</h4><p>Complete the Post Brief Template. If any field can't be filled, the post isn't ready. Get approval via WhatsApp or a 5-minute call before writing.</p></div><span class="step-time">15–20 min</span></div>
+          <div class="step"><span class="step-num">02</span><div class="step-body"><h4>First Draft</h4><p>Write from the brief only. Follow Voice Rules during writing, not after. Write through to the close before self-editing.</p></div><span class="step-time">45–60 min</span></div>
+          <div class="step"><span class="step-num">03</span><div class="step-body"><h4>Four Editing Passes</h4><p>See Chapter 08. Do not combine passes.</p></div><span class="step-time">30–40 min</span></div>
+          <div class="step"><span class="step-num">04</span><div class="step-body"><h4>Client Review</h4><p>Send one post at a time via Google Doc or WhatsApp. Apply the Conflict Resolution Protocol if changes are requested. Complete only when he says "good to go."</p></div><span class="step-time">—</span></div>
+          <div class="step"><span class="step-num">05</span><div class="step-body"><h4>Publish and Log</h4><p>Publish Tuesday–Thursday, 8–9am IST. Log date, post type, persona, hook. Monitor comments 48 hours. Never publish two posts the same day.</p></div><span class="step-time">10 min</span></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Post Brief Template</h3>
+        <div class="card">
+          <div class="grid-2" style="gap:.9rem;">
+            <div><div class="persona-row"><div class="k">Post Type</div></div></div>
+            <div><div class="persona-row"><div class="k">Target Persona</div></div></div>
+            <div><div class="persona-row"><div class="k">Core Emotion to Resolve</div></div></div>
+            <div><div class="persona-row"><div class="k">Specific Person or Situation</div></div></div>
+            <div><div class="persona-row"><div class="k">The Insight (one sentence)</div></div></div>
+            <div><div class="persona-row"><div class="k">The Hook (first line)</div></div></div>
+            <div><div class="persona-row"><div class="k">Close Type</div><div class="v">Truth Statement or Stakes Question</div></div></div>
+            <div><div class="persona-row"><div class="k">Which Objective This Serves</div><div class="v">CEO candidacy / internal influence / leadership influence</div></div></div>
+          </div>
+          <div class="persona-row" style="margin-top:.4rem;"><div class="k">What This Post Must Not Do</div></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3 class="sec-title">Conflict Resolution Protocol</h3>
+        <div class="table-wrap" style="margin-bottom:1.2rem;">
+          <table>
+            <thead><tr><th>Decision Type</th><th>Owner</th><th>Final Authority</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Factual accuracy</td><td>Bharat</td><td>Bharat</td></tr>
+              <tr><td class="strong">Does this sound like me?</td><td>Bharat</td><td>Bharat</td></tr>
+              <tr><td class="strong">Voice rule compliance</td><td>Writer</td><td>Voice Bible</td></tr>
+              <tr><td class="strong">Strategic post intent</td><td>Both</td><td>Both</td></tr>
+              <tr><td class="strong">Comfort and risk</td><td>Bharat</td><td>Bharat</td></tr>
+              <tr><td class="strong">Compliance and legal</td><td>Bharat</td><td>Bharat</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid-3">
+          <div class="obj-card"><div class="obj-tag">Type 01</div><h4 class="sub-title" style="font-size:.98rem;">Authenticity Conflict</h4><p style="font-style:italic;margin-bottom:.5rem;">"This doesn't sound like me."</p><p>Return to the Voice Bible. If it follows the rules, explain which and why. If it violates one, rewrite immediately. If it follows rules but is still rejected — the Bible needs updating.</p></div>
+          <div class="obj-card"><div class="obj-tag">Type 02</div><h4 class="sub-title" style="font-size:.98rem;">Comfort Conflict</h4><p style="font-style:italic;margin-bottom:.5rem;">"I am not comfortable saying this."</p><p>His comfort is a hard constraint. Ask: "What part specifically — the claim, the detail, or the position?" Adjust accordingly. Do not argue.</p></div>
+          <div class="obj-card"><div class="obj-tag">Type 03</div><h4 class="sub-title" style="font-size:.98rem;">Preference Conflict</h4><p style="font-style:italic;margin-bottom:.5rem;">"I would have said it differently."</p><p>If it reflects genuine voice, accept and update the Bible. If it makes the post more generic, say so once, then comply. Do not repeat the objection.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 08 -->
+    <section class="chapter" id="ch08">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 08</span>
+        <h2 class="ch-title">The Editing Protocol</h2>
+        <p class="ch-why">Editing is not proofreading. Each pass has a single focus. Combining passes produces posts that pass no standard rigorously.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="pass-card">
+          <div class="pass-head"><span class="pass-tag">Pass 01</span><h4>The Truth Pass</h4></div>
+          <p class="pass-focus">Specificity and factual grounding only.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Every person's core quality is traceable to transcript or validated story call</li>
+            <li><span class="check-mark">✓</span>Every number is grounded in what Bharat actually said</li>
+            <li><span class="check-mark">✓</span>No extrapolation beyond the brief</li>
+            <li><span class="check-mark">✓</span>All institution references are anonymised</li>
+            <li><span class="check-mark">✓</span>No client or counterparty identifiable</li>
+            <li><span class="check-mark">✓</span>The insight actually follows from the story</li>
+          </ul>
+        </div>
+        <div class="pass-card">
+          <div class="pass-head"><span class="pass-tag">Pass 02</span><h4>The Voice Pass</h4></div>
+          <p class="pass-focus">Voice Bible compliance only.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>No phrase from Voice DON'TS appears anywhere</li>
+            <li><span class="check-mark">✓</span>Post opens with a scene, not a claim</li>
+            <li><span class="check-mark">✓</span>Failure-of-absorption clause present where relevant</li>
+            <li><span class="check-mark">✓</span>All people identified by core quality, not title</li>
+            <li><span class="check-mark">✓</span>Close avoids motivation — lands on truth or question</li>
+            <li><span class="check-mark">✓</span>At least one Sentence Signature Table construction present</li>
+          </ul>
+        </div>
+        <div class="pass-card">
+          <div class="pass-head"><span class="pass-tag">Pass 03</span><h4>The Rhythm Pass</h4></div>
+          <p class="pass-focus">Structure and pacing only.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Read aloud — mark every hesitation, rewrite it</li>
+            <li><span class="check-mark">✓</span>Hook ≤210 characters on lines 1–2</li>
+            <li><span class="check-mark">✓</span>Blank line after line 2, and after every paragraph</li>
+            <li><span class="check-mark">✓</span>No paragraph longer than 3 lines</li>
+            <li><span class="check-mark">✓</span>Pivot uses an approved construction</li>
+            <li><span class="check-mark">✓</span>Last sentence feels complete read alone</li>
+          </ul>
+        </div>
+        <div class="pass-card">
+          <div class="pass-head"><span class="pass-tag">Pass 04</span><h4>The Business Pass</h4></div>
+          <p class="pass-focus">Strategic intent only.</p>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Post does what the brief said it would do</li>
+            <li><span class="check-mark">✓</span>Reaches the target persona — fear or desire felt</li>
+            <li><span class="check-mark">✓</span>Named professional objective served</li>
+            <li><span class="check-mark">✓</span>Post does not do what the brief prohibited</li>
+            <li><span class="check-mark">✓</span>No Hard Constraint violated</li>
+          </ul>
+        </div>
+      </div>
+      <span class="flag" style="margin-top:1.2rem;">Section C (Business Pass) failure: post returns to writer. No client review. No exceptions.</span>
+    </section>
+
+    <!-- CHAPTER 09 -->
+    <section class="chapter" id="ch09">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 09</span>
+        <h2 class="ch-title">Content Architecture</h2>
+        <p class="ch-why">Frequency, mix, and sequencing are strategic decisions, not scheduling decisions. An architecture that's wrong by design produces diminishing returns regardless of post quality.</p>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Post Mix</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Post Type</th><th style="width:8%;">% of Total</th><th>Logic</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Career Lens</td><td><span class="badge-pct">40%</span></td><td>Fastest trust-builder with Aditya and Sangeeta</td></tr>
+              <tr><td class="strong">Person Portrait</td><td><span class="badge-pct">30%</span></td><td>Establishes Bharat as a distinct person; highest-read by Sangeeta and Rajesh</td></tr>
+              <tr><td class="strong">Institutional Truth</td><td><span class="badge-pct">20%</span></td><td>Highest CEO positioning value; two per month maximum</td></tr>
+              <tr><td class="strong">Leadership Craft</td><td><span class="badge-pct">10%</span></td><td>Most differentiated content; one per month sustainable</td></tr>
+              <tr><td class="strong">Live Take</td><td><span class="badge-pct">—</span></td><td>Event-driven; maximum once per month, never scheduled</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Sequencing Rules</h4>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Never follow a Person Portrait directly with an Institutional Truth — buffer with a Career Lens</li>
+            <li><span class="check-mark">✓</span>A Leadership Craft Post earns the right to be followed by a more assertive position</li>
+            <li><span class="check-mark">✓</span>Never stack two high-vulnerability posts — follow with Craft or Career Lens</li>
+            <li><span class="check-mark">✓</span>Never open a week with a Live Take</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">Topic Rotation</h4>
+          <p class="explain">A topic can be revisited after 8 posts on other subjects (~3–4 weeks). Earlier, only as a sequel. Repetition says the same thing again; a sequel goes somewhere the original did not — a specific case, a counter-example, a time-elapsed update.</p>
+        </div>
+      </div>
+
+      <section class="block">
+        <h3 class="sec-title">Seasonal Overlay</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:18%;">Period</th><th>Content Opportunity</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">Feb – Apr</td><td>Appraisal and promotion season — Career Lens and Institutional Truth on performance decisions. MBA placement content for Aditya entering first institutions.</td></tr>
+              <tr><td class="strong">Jul – Sep</td><td>Mid-year reviews — Career Lens about how to read a review that didn't go the way you expected.</td></tr>
+              <tr><td class="strong">Oct – Dec</td><td>Year-end leadership planning — Institutional Truth on succession, what boards look for, how pipelines are built.</td></tr>
+              <tr><td class="strong">Sep – Nov</td><td>BFSI conference season — the conferences are the goal, not the peg. No "looking forward to speaking at X" posts.</td></tr>
+              <tr><td class="strong">January</td><td>Year-end reflection — Career Lens and Person Portrait about what the previous year taught; specific, honest, not motivational.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <!-- CHAPTER 10 -->
+    <section class="chapter" id="ch10">
+      <div class="ch-head">
+        <span class="ch-num">Chapter 10</span>
+        <h2 class="ch-title">Quality Control Gates</h2>
+        <p class="ch-why">The Editing Protocol improves a post. This gate decides whether it's ready to leave the writer's hands — a different question entirely.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">A · Voice & Identity</h4>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Could only have been written by Bharat — swap his name for any other banker; if it still works, it fails</li>
+            <li><span class="check-mark">✓</span>No phrase from Voice DON'TS appears anywhere</li>
+            <li><span class="check-mark">✓</span>At least one Sentence Signature Table construction present</li>
+            <li><span class="check-mark">✓</span>Emotional temperature matches his transcript register</li>
+            <li><span class="check-mark">✓</span>No claim contradicts the Value System (Ch. 01B)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">B · Structure & Rhythm</h4>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Hook ≤210 characters on lines 1–2</li>
+            <li><span class="check-mark">✓</span>Blank line rule followed throughout</li>
+            <li><span class="check-mark">✓</span>Pivot present, approved construction used</li>
+            <li><span class="check-mark">✓</span>Close is Truth Statement or Stakes Question — not both, not neither</li>
+            <li><span class="check-mark">✓</span>Reads fluently aloud, no re-reading needed</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 class="sub-title" style="font-size:1rem;">C · Business Logic</h4>
+          <ul class="checklist">
+            <li><span class="check-mark">✓</span>Serves a named professional objective</li>
+            <li><span class="check-mark">✓</span>Reaches the named primary persona — fear or desire felt</li>
+            <li><span class="check-mark">✓</span>Does exactly what the brief specified</li>
+            <li><span class="check-mark">✓</span>Does not do what the brief prohibited</li>
+            <li><span class="check-mark">✓</span>No Hard Constraint violated</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="limits-box" style="margin-top:1.4rem;">
+        <h4>Quality Gate Rule</h4>
+        <p style="color:var(--text-muted);font-size:13.8px;">Any failure in Section C = post returns to the writer immediately. No client review. No exceptions. Failures in Section A or B = targeted fix — not a full rewrite unless the failure is structural.</p>
+      </div>
+
+      <div class="statement" style="margin-top:2rem;margin-left:1.6rem;max-width:720px;">What this document cannot do is replace the client's review — not because it's incomplete, but because Bharat is the only person who knows when something feels wrong in a way he cannot yet articulate.</div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="doc-footer">
+  <span>Bharat Rungta — Personal Brand Manifesto · v1.2 · RocketRush · June 2026</span>
+  <span>Confidential — Not for distribution</span>
+</footer>
+
+<script>
+  const navButtons = document.querySelectorAll('.nav-item');
+  const chapters = document.querySelectorAll('.chapter');
+  const label = document.getElementById('chapter-label');
+  const mainEl = document.querySelector('.main');
+  const panel = document.getElementById('mobile-nav-panel');
+  const hamburger = document.getElementById('hamburger-btn');
+  const closeBtn = document.getElementById('panel-close-btn');
+
+  function openPanel(){
+    panel.classList.add('open');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePanel(){
+    panel.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closePanel(); });
+
+  navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target;
+      const labelText = btn.dataset.label;
+      chapters.forEach(c => c.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+      navButtons.forEach(b => b.classList.toggle('active', b.dataset.target === target));
+      label.textContent = labelText;
+      closePanel();
+      mainEl.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({top: document.querySelector('.shell').offsetTop - 10, behavior: 'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
